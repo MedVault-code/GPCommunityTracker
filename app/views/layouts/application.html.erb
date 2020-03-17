@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ScreeningFormWeb</title>
+    <title>COVID-19 GP Screening Form</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -12,6 +12,22 @@
 
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.12.1/css/all.css" integrity="sha384-TxKWSXbsweFt0o2WqfkfJRRNVaPdzXJ/YLqgStggBVRREXkwU7OKz+xXtqOU4u8+" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i&display=swap" rel="stylesheet">
+
+    <meta name="turbolinks-cache-control" content="no-cache">
+    <meta name="description" content="Online GP screening forms to facilitate patient screening for COVID-19">
+    <meta name="Referrer" content="origin">
+
+    <!-- FB -->
+    <meta property="og:url" content="<%= request.original_url %>">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="COVID-19 GP Screening Form">
+    <meta property="og:description" content="Online GP screening forms to facilitate patient screening for COVID-19">
+    <meta property="og:site_name" content="Screening Form">
+    <meta property="og:locale" content="en_ie">
+
+    <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
   </head>
 
   <body>
