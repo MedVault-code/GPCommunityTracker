@@ -1,0 +1,352 @@
+
+
+<div class="container space-2">
+  <!-- Title -->
+  <div class="row">
+    <div class="col-12 col-md-8 mx-auto">
+      <div class="text-center mb-9">
+        <h2 class="text-primary font-weight-normal">Symptomatic COVID-19 Testing Form for <span class="font-weight-semi-bold"><%= @practice.practice_name %></span></h2>
+        <p>Due to the increased volume of phone and email queries about  Coronavirus testing in light of broadening of testing criteria announced by the HSE - we are now asking symptomatic patients to fill out the following questionnaire to help us assess you more efficiently. </p>
+        <p>We understand our patients are concerned for themselves and their loved ones and we can assure you we are doing everything we can to operate as normally as possible in these extraordinary times, while at the same time minimising the risk of exposure to our patients or indeed our practice. </p>
+        <h3 class="mb-7 text-center">Please fill out the below form to help us triage your symptoms to see if you need testing for Covid-19*</h3>
+      </div>
+    </div>
+  </div>
+
+  <!-- End Title -->
+
+  <div class="w-lg-80 mx-auto">
+
+    <!-- Contacts Form -->
+    <%= form_for(@practice_form, url: submit_practice_form_path(practice: @practice.slug)) do |f| %>
+      <div class="row">
+        <!-- Input -->
+        <div class="col-sm-6 mb-6">
+          <div class="js-form-message">
+            <label class="form-label">
+              First Name
+              <span class="text-danger">*</span>
+            </label>
+
+            <%= f.text_field :first_name, class: "form-control", placeholder: "Brian", required: true, "data-msg": "Please enter your name.", "data-error-class": "u-has-error", "data-success-class": "u-has-success" %>
+          </div>
+        </div>
+        <!-- End Input -->
+
+        <!-- Input -->
+        <div class="col-sm-6 mb-6">
+          <div class="js-form-message">
+            <label class="form-label">
+              Last Name
+              <span class="text-danger">*</span>
+            </label>
+
+            <%= f.text_field :last_name, class: "form-control", placeholder: "Kenny", required: true, "data-msg": "Please enter your name.", "data-error-class": "u-has-error", "data-success-class": "u-has-success" %>
+          </div>
+        </div>
+        <!-- End Input -->
+
+        <!-- Input -->
+        <div class="col-sm-6 mb-6">
+          <div class="js-form-message">
+            <label class="form-label">
+              Date of Birth
+              <span class="text-danger">*</span>
+            </label>
+
+            <%= f.date_field :dob, class: "form-control", required: true %>
+          </div>
+        </div>
+        <!-- End Input -->
+      </div>
+      <div class="row">
+
+        <!-- Input -->
+        <div class="col-sm-6 mb-6">
+          <div class="js-form-message">
+            <label class="form-label">
+              Address 1
+              <span class="text-danger">*</span>
+            </label>
+
+            <%= f.text_field :address_1, class: "form-control", placeholder: "Address 1", required: true, "data-msg": "Please enter your address.", "data-error-class": "u-has-error", "data-success-class": "u-has-success" %>
+          </div>
+        </div>
+        <!-- End Input -->
+        <!-- Input -->
+        <div class="col-sm-6 mb-6">
+          <div class="js-form-message">
+            <label class="form-label">
+              Address 2
+            </label>
+
+            <%= f.text_field :address_2, class: "form-control", placeholder: "Address 2" %>
+          </div>
+        </div>
+        <!-- End Input -->
+        <!-- Input -->
+        <div class="col-sm-6 mb-6">
+          <div class="js-form-message">
+            <label class="form-label">
+              City
+              <span class="text-danger">*</span>
+            </label>
+
+            <%= f.text_field :city, class: "form-control", placeholder: "City", required: true, "data-msg": "Please enter your city.", "data-error-class": "u-has-error", "data-success-class": "u-has-success" %>
+          </div>
+        </div>
+        <!-- End Input -->
+        <!-- Input -->
+        <div class="col-sm-6 mb-6">
+          <div class="js-form-message">
+            <label class="form-label">
+              County
+              <span class="text-danger">*</span>
+            </label>
+
+            <%= f.text_field :county, class: "form-control", placeholder: "County", required: true, "data-msg": "Please enter your county.", "data-error-class": "u-has-error", "data-success-class": "u-has-success" %>
+          </div>
+        </div>
+        <!-- End Input -->
+        <!-- Input -->
+        <div class="col-sm-6 mb-6">
+          <div class="js-form-message">
+            <label class="form-label">
+              Postcode
+              <span class="text-danger">*</span>
+            </label>
+
+            <%= f.text_field :postcode, class: "form-control", placeholder: "Postcode", required: true, "data-msg": "Please enter your postcode.", "data-error-class": "u-has-error", "data-success-class": "u-has-success" %>
+          </div>
+        </div>
+        <!-- End Input -->
+        <!-- Input -->
+        <div class="col-sm-6 mb-6">
+          <div class="js-form-message">
+            <label class="form-label">
+              Country
+              <span class="text-danger">*</span>
+            </label>
+
+            <%= f.text_field :country, class: "form-control", placeholder: "Ireland", required: true, "data-msg": "Please enter your country.", "data-error-class": "u-has-error", "data-success-class": "u-has-success" %>
+          </div>
+        </div>
+        <!-- End Input -->
+      </div>
+      <div class="row">
+        <!-- Input -->
+        <div class="col-sm-12 mb-6">
+          <div class="js-form-message">
+            <label class="form-label">
+              Email
+              <span class="text-danger">*</span>
+            </label>
+
+            <%= f.email_field :email, class: "form-control", placeholder: "Your email", required: true, "data-msg": "Please enter your name.", "data-error-class": "u-has-error", "data-success-class": "u-has-success" %>
+          </div>
+        </div>
+        <!-- End Input -->
+        <!-- Input -->
+        <div class="col-sm-12 mb-6">
+          <div class="js-form-message">
+            <label class="form-label">
+              Message
+            </label>
+
+            <%= f.text_area :message, class: "form-control" %>
+          </div>
+        </div>
+        <!-- End Input -->
+      </div>
+      <div class="row">
+
+        <!-- Input -->
+        <div class="col-sm-12 mb-6">
+          <label class="form-label">
+            Symptoms
+          </label>
+
+          <small class="form-text text-muted mb-3">Please outline your symptoms below:</small>
+
+
+          <div class="form-check mb-2">
+            <%= f.check_box :symptoms, { multiple: true }, "Fevers/Chills (fever usually above 38 degrees)" %>
+            <label class="form-check-label" for="defaultCheck1">
+              Fevers/Chills (fever usually above 38 degrees)
+            </label>
+          </div>
+
+          <div class="form-check mb-2">
+            <%= f.check_box :symptoms, { multiple: true }, "Cough (can be dry or productive/chesty)" %>
+            <label class="form-check-label" for="defaultCheck1">
+              Cough (can be dry or productive/chesty)
+            </label>
+          </div>
+
+          <div class="form-check mb-2">
+            <%= f.check_box :symptoms, { multiple: true }, "Difficulty Breathing/Shortness of Breath" %>
+            <label class="form-check-label" for="defaultCheck1">
+              Difficulty Breathing/Shortness of Breath
+            </label>
+          </div>
+
+          <div class="form-check mb-2">
+            <%= f.check_box :symptoms, { multiple: true }, "Sore throat" %>
+            <label class="form-check-label" for="defaultCheck1">
+              Sore throat
+            </label>
+          </div>
+
+          <div class="form-check mb-2">
+            <%= f.check_box :symptoms, { multiple: true }, "Runny nose" %>
+            <label class="form-check-label" for="defaultCheck1">
+              Runny nose
+            </label>
+          </div>
+
+          <div class="form-check mb-2">
+            <%= f.check_box :symptoms, { multiple: true }, "Diarrhoea" %>
+            <label class="form-check-label" for="defaultCheck1">
+              Diarrhoea
+            </label>
+          </div>
+
+          <div class="form-check mb-2">
+            <%= f.check_box :symptoms, { multiple: true }, "Vomiting" %>
+            <label class="form-check-label" for="defaultCheck1">
+              Vomiting
+            </label>
+          </div>
+
+          <div class="form-check mb-2">
+            <%= f.check_box :symptoms, { multiple: true }, "Aches & Pains" %>
+            <label class="form-check-label" for="defaultCheck1">
+              Aches & Pains
+            </label>
+          </div>
+
+          <div class="form-check mb-2">
+            <%= f.check_box :symptoms, { multiple: true }, "Fatigue" %>
+            <label class="form-check-label" for="defaultCheck1">
+              Fatigue
+            </label>
+          </div>
+
+          <div class="form-check">
+            <%= f.check_box :symptoms, { multiple: true }, "No symptoms (if you have no symptoms, you are unlikely to meet the criteria for testing)" %>
+            <label class="form-check-label" for="defaultCheck1">
+              No symptoms (if you have no symptoms, you are unlikely to meet the criteria for testing)
+            </label>
+          </div>
+        </div>
+        <!-- End Input -->
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6 mb-6">
+          <div class="js-form-message">
+            <label class="form-label">
+              Duration of Symptoms
+              <span class="text-danger">*</span>
+            </label>
+
+            <div class="form-group">
+              <small class="form-text text-muted mb-3">When did you start displaying symptoms?</small>
+              <%= f.select :symptoms_duration, [['No Symptoms', 'No Symptoms'], ['Today', 'Today'], ['1 - 3 days ago', '1 - 3 days ago'], ['3 - 5 days ago', '3 - 5 days ago'], ['5 - 7 days ago', '5 - 7 days ago'], ['More than 7 days ago', 'More than 7 days ago']], {}, class: "custom-select" %>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 mb-6">
+          <div class="js-form-message">
+            <label class="form-label">
+              Severity of Symptoms
+              <span class="text-danger">*</span>
+            </label>
+
+            <div class="form-group">
+              <small class="form-text text-muted mb-3">How severe are your symptoms?</small>
+              <%= f.select :severity, [['No Symptoms', 'No Symptoms'], ['Mild', 'Mild'], ['Moderate', 'Moderate'], ['Severe (please call us or an ambulance)', 'Severe']], {}, class: "custom-select" %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6 mb-6">
+          <div class="js-form-message">
+            <label class="form-label">
+              Recent Travel/Contact with confirmed Coronavirus case?
+              <span class="text-danger">*</span>
+            </label>
+
+            <div class="form-group">
+              <small class="form-text text-muted mb-3">Have you travelled to an area affected by the Coronavirus or been in close contact with a confirmed case of Coronavirus - this is not required for Covid-19 testing, however is useful information</small>
+              <%= f.select :recent_travel, [['Yes, I have traveled to an affected area', true], ['No, I have no traveled to an affected area', false]], {:prompt => "Please select an option"}, class: "custom-select" %>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 mb-6">
+          <div class="js-form-message">
+            <label class="form-label">
+              Are you currently self isolating?
+              <span class="text-danger">*</span>
+            </label>
+
+            <div class="form-group">
+              <small class="form-text text-muted mb-3">Anybody with respiratory symptoms of any kind is now advised to self-isolate. </small>
+              <%= f.select :self_isolating, [['Yes, I am self isolating', true], ['No, I am not self isolating', false]], {:prompt => "Please select an option"}, class: "custom-select" %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12 mb-6">
+          <div class="js-form-message">
+            <label class="form-label">
+              Brief outline of your symptoms/concerns
+              <span class="text-danger">*</span>
+            </label>
+
+            <div class="form-group">
+              <small class="form-text text-muted mb-3">Please give a brief outline of your symptoms, when they started and your concern re testing. If you have any other symptoms not covered in the checklist above, please let us know here also. </small>
+              <%= f.text_area :symptoms_outline, class: "form-control", required: true %>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12 mb-6">
+          <div class="js-form-message">
+            <label class="form-label">
+              Pre-existing medical conditions
+            </label>
+
+            <div class="form-group">
+              <small class="form-text text-muted mb-3">Please outline any significant pre-existing medical conditions that may put you in an at-risk category</small>
+
+              <%= f.text_area :pre_existing_medical_conditions, class: "form-control" %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <%= f.submit "Submit Form", class: "btn btn-primary btn-wide transition-3d-hover mb-4" %>
+        <p class="small">You'll receive an email with your details shortly.</p>
+      </div>
+    <% end %>
+    <!-- End Contacts Form -->
+  </div>
+</div>
