@@ -10,6 +10,19 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
  *= require_self
  */
+
+ @import "users/theme";
+
+ @import "vendor/fontawesome-all.min";
+
+ @import "vendor/animate";
+ @import "vendor/hs.megamenu";
+ @import "vendor/dropzone";
+ @import "vendor/jquery.fancybox";
+ @import "vendor/slick";
+ @import "vendor/flatpickr";
+ @import "vendor/aos";
+
+ @import "vendor/map";

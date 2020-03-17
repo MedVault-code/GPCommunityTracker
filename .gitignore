@@ -13,15 +13,29 @@
 !/log/.keep
 !/tmp/.keep
 
-# Ignore uploaded files in development
+# Ignore uploaded files in development.
 /storage/*
 !/storage/.keep
-
-/node_modules
-/yarn-error.log
 
 /public/assets
 .byebug_history
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
+
+/coverage
+.scratch
+.env
+.DS_Store
+app/.DS_Store
+app/assets/.DS_Store
+dump.rdb
+# Ignore application configuration
+/config/application.yml

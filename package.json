@@ -1,5 +1,21 @@
 {
-  "name": "screening-form-web",
+  "name": "iq_data_web",
   "private": true,
-  "dependencies": {}
+  "scripts": {
+    "start": "foreman start",
+    "dev": "foreman start -f Procfile.dev",
+    "console": "foreman run rails c"
+  },
+  "dependencies": {
+    "@rails/actioncable": "^6.0.0",
+    "@rails/activestorage": "^6.0.0",
+    "@rails/ujs": "^6.0.0",
+    "@rails/webpacker": "4.2.2",
+    "turbolinks": "^5.2.0",
+    "typed.js": "^2.0.11"
+  },
+  "version": "0.1.0",
+  "devDependencies": {
+    "webpack-dev-server": "^3.10.3"
+  }
 }

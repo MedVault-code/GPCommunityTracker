@@ -1,16 +1,40 @@
-// This is a manifest file that'll be compiled into application.js, which will include all the files
-// listed below.
-//
-// Any JavaScript/Coffee file within this directory, lib/assets/javascripts, or any plugin's
-// vendor/assets/javascripts directory can be referenced here using a relative path.
-//
-// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
-// compiled file. JavaScript code in this file should be added after the last require_* statement.
-//
-// Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
-// about supported directives.
-//
-//= require rails-ujs
-//= require activestorage
 //= require turbolinks
-//= require_tree .
+//= require jquery
+//= require jquery_ujs
+
+//= require vendor/jquery.min.js
+//= require vendor/jquery-migrate.min.js
+//= require vendor/popper.min.js
+//= require vendor/bootstrap.min.js
+
+//= require vendor/appear.js
+//= require vendor/hs.megamenu.js
+//= require vendor/jquery.fancybox.min.js
+//= require vendor/dzsparallaxer.js
+//= require vendor/slick.js
+//= require vendor/jquery.validate.min.js
+//= require vendor/jquery.cubeportfolio.min.js
+//= require vendor/svg-injector.min.js
+//= require vendor/jquery.geocomplete.js
+//= require vendor/flatpickr.min.js
+//= require vendor/aos.js
+//= require vendor/countTo.js
+//= require vendor/gmaps.js
+//= require vendor/dropzone.js
+//= require vendor/datatables/media/js/jquery.dataTables.js
+//= require vendor/addevent.js
+
+//= require components/hs.core.js
+//= require components/hs.dropzone.js
+//= require components/hs.header.js
+//= require components/hs.unfold.js
+//= require components/hs.fancybox.js
+//= require components/hs.slick-carousel.js
+//= require components/hs.validation.js
+//= require components/hs.go-to.js
+//= require components/hs.svg-injector.js
+//= require components/hs.scroll-nav.js
+//= require components/hs.sticky-block.js
+//= require components/hs.range-datepicker.js
+//= require components/hs.g-map.js
+//= require components/hs.datatables.js
