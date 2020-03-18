@@ -135,24 +135,22 @@
         </div>
         <!-- End Input -->
         <!-- Input -->
-        <div class="col-sm-12 mb-6">
-          <label class="form-label">
-            Symptoms
-          </label>
-
-          <small class="form-text text-muted mb-3">Don't know your Eircode use <a href="https://finder.eircode.ie/#/">Eircode Finder</a> </small>
-          
-          <div class="col-sm-6 mb-6">
+        <div class="col-sm-6 mb-6">
           <div class="js-form-message">
             <label class="form-label">
               Eircode
               <span class="text-danger">*</span>
             </label>
 
+          <small class="form-text text-muted mb-3">Don't know your Eircode use <a href="https://finder.eircode.ie/#/">Eircode Finder</a> </small>
+          
+          
+
             <%= f.text_field :eircode, class: "form-control", placeholder: "Eircode", required: true, "data-msg": "Please enter your Eircode.", "data-error-class": "u-has-error", "data-success-class": "u-has-success" %>
           </div>
         </div>
         <!-- End Input -->
+          
         <!-- Input -->
         <div class="col-sm-6 mb-6">
           <div class="js-form-message">
