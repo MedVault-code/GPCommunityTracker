@@ -45,7 +45,10 @@ class PracticeFormsController < ApplicationController
         :recent_travel,
         :self_isolating,
         :symptoms_outline,
-        :pre_existing_medical_conditions
+        :pre_existing_medical_conditions,
+        :ppsn,
+        :phone,
+        :existing_patient
       )
   end
 end

@@ -47,7 +47,7 @@
         <!-- End Input -->
     </div>
       <div class="row">
-        
+
          <!-- Input -->
         <div class="col-sm-6 mb-6">
           <div class="js-form-message">
@@ -56,11 +56,11 @@
               <span class="text-danger">*</span>
             </label>
 
-            <%= f.text_field :PPSN, class: "form-control", placeholder: "1234567W", required: true, "data-msg": "Please enter your PPSN.", "data-error-class": "u-has-error", "data-success-class": "u-has-success" %>
+            <%= f.text_field :ppsn, class: "form-control", placeholder: "1234567W", required: true, "data-msg": "Please enter your PPSN.", "data-error-class": "u-has-error", "data-success-class": "u-has-success" %>
           </div>
         </div>
         <!-- End Input -->
-        
+
          <!-- Input -->
         <div class="col-sm-6 mb-6">
           <div class="js-form-message">
@@ -69,11 +69,11 @@
               <span class="text-danger">*</span>
             </label>
 
-            <%= f.text_field :Mobile, class: "form-control", placeholder: "0861234567", required: true, "data-msg": "Please enter your mobile phone number.", "data-error-class": "u-has-error", "data-success-class": "u-has-success" %>
+            <%= f.text_field :phone, class: "form-control", placeholder: "0861234567", required: true, "data-msg": "Please enter your mobile phone number.", "data-error-class": "u-has-error", "data-success-class": "u-has-success" %>
           </div>
         </div>
         <!-- End Input -->
-        
+
         <!-- Input -->
         <div class="col-sm-6 mb-6">
           <div class="js-form-message">
@@ -145,14 +145,14 @@
             </label>
 
           <small class="form-text text-muted mb-3">Don't know your Eircode use <a href="https://finder.eircode.ie/#/">Eircode Finder</a> </small>
-          
-          
 
-            <%= f.text_field :eircode, class: "form-control", placeholder: "Eircode", required: true, "data-msg": "Please enter your Eircode.", "data-error-class": "u-has-error", "data-success-class": "u-has-success" %>
+
+
+            <%= f.text_field :postcode, class: "form-control", placeholder: "Eircode", required: true, "data-msg": "Please enter your Eircode.", "data-error-class": "u-has-error", "data-success-class": "u-has-success" %>
           </div>
         </div>
         <!-- End Input -->
-          
+
         <!-- Input -->
         <div class="col-sm-6 mb-6">
           <div class="js-form-message">
@@ -179,7 +179,7 @@
           </div>
         </div>
         <!-- End Input -->
-       
+
       </div>
       <div class="row">
 
@@ -380,8 +380,8 @@
             </div>
           </div>
         </div>
-          
-        
+
+
       <div class="text-center">
         <%= f.submit "Submit Form", class: "btn btn-primary btn-wide transition-3d-hover mb-4" %>
         <p class="small">By submitting this form, I consent to my data being stored, analysed and transferred to my GP practice for screening. I agree to the website privacy policy and I also agree to take responsibility to follow up with up GP practice directly if I have not heard back from them with 48 hours. You'll receive an email with your details shortly.</p>
