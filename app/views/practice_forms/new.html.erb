@@ -377,36 +377,22 @@
         <div class="col-sm-6 mb-6">
           <div class="js-form-message">
             <label class="form-label">
-              New or Existing Patient?
+              New or Existing Patient
               <span class="text-danger">*</span>
             </label>
 
             <div class="form-group">
               <small class="form-text text-muted mb-3">Are you an existing patient of this practice or are you a new patient</small>
-              <%= f.select :recent_travel, [['Exisitng Patient', true], ['New Patient', false]], {:prompt => "Please select an option"}, class: "custom-select" %>
+              <%= f.select :existing_patient, [['Exisitng Patient', true], ['New Patient', false]], {:prompt => "Please select an option"}, class: "custom-select" %>
 
             </div>
           </div>
         </div>
           
-          <!-- Input -->
-        <div class="col-sm-12 mb-6">
-          <label class="form-label">
-            Data declaration & GP follow up
-          </label>
-          
-          <div class="form-check">
-            <%= f.check_box :Data Declaration Consent Form, { multiple: true }, "By submitting this form, I consent to my data being stored, analysed and transferred to my GP practice for screening. I agree to the website pravacy policy and I also agree to take responsibility to follow up with up GP practice directly if I have not heard back from them with 48 hours." %>
-            <label class="form-check-label" for="defaultCheck1">
-              By submitting this form, I consent to my data being stored, analysed and transferred to my GP practice for screening. I agree to the website pravacy policy and I also agree to take responsibility to follow up with up GP practice directly if I have not heard back from them with 48 hours.
-            </label>
-          </div>
-        </div>
-        <!-- End Input -->
         
       <div class="text-center">
         <%= f.submit "Submit Form", class: "btn btn-primary btn-wide transition-3d-hover mb-4" %>
-        <p class="small">You'll receive an email with your details shortly.</p>
+        <p class="small">By submitting this form, I consent to my data being stored, analysed and transferred to my GP practice for screening. I agree to the website pravacy policy and I also agree to take responsibility to follow up with up GP practice directly if I have not heard back from them with 48 hours. You'll receive an email with your details shortly.</p>
       </div>
     <% end %>
     <!-- End Contacts Form -->
