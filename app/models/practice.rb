@@ -10,7 +10,7 @@ class Practice < ApplicationRecord
   has_many :practice_forms
 
   after_create :send_welcome_email
-  
+
   def send_welcome_email
     PracticeMailer.with(practice: self).welcome_message.deliver_now!
   end
