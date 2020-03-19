@@ -1,0 +1,42 @@
+<main id="content" role="main">
+    <!-- Login Form -->
+    <div class="container space-2">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "js-validate w-md-75 w-lg-50 mx-md-auto"}) do |f| %>
+        <!-- Title -->
+        <div class="mb-7">
+          <h2 class="h3 text-primary font-weight-normal mb-0">Admin <span class="font-weight-semi-bold">Panel</span></h2>
+          <p>Login to manage your account.</p>
+        </div>
+        <!-- End Title -->
+
+        <!-- Form Group -->
+        <div class="js-form-message form-group">
+          <label class="form-label" for="signinSrEmail">Email address</label>
+          <%= f.email_field :email, autocomplete: "email", class: "form-control", placeholder: "Email address", required: true %>
+        </div>
+        <!-- End Form Group -->
+
+        <!-- Form Group -->
+        <div class="js-form-message form-group">
+          <label class="form-label" for="signinSrPassword">
+            <span class="d-flex justify-content-between align-items-center">
+              Password
+              <%= link_to "Forgot Password?", new_admin_password_path, class: "link-muted text-capitalize font-weight-normal" %>
+            </span>
+          </label>
+          <%= f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: "********", required: true %>
+        </div>
+        <!-- End Form Group -->
+
+        <!-- Button -->
+        <div class="row align-items-center mb-5">
+
+          <div class="col-6 text-right">
+            <%= f.submit "Log in", class: "btn btn-primary transition-3d-hover" %>
+          </div>
+        </div>
+        <!-- End Button -->
+      <% end %>
+    </div>
+    <!-- End Login Form -->
+  </main>

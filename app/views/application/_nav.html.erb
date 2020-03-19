@@ -22,14 +22,19 @@
         <!-- Navigation -->
         <div id="navBar" class="collapse navbar-collapse u-header__navbar-collapse">
           <ul class="navbar-nav u-header__navbar-nav">
-            <%= link_to "For support call 086 8621090 (9am-6pm) or email support@gpbuddy.ie", "#", class: 'nav-link u-header__nav-link' %>
-            <li class="nav-item u-header__nav-last-item">
-              <% if current_practice %>
-                <%= link_to "My Practice Form", new_practice_form_path(practice: current_practice.slug), class: 'btn btn-sm btn-primary transition-3d-hover' %>
-              <% else %>
-                <%= link_to "Add My Practice", new_practice_registration_path, class: 'btn btn-sm btn-primary transition-3d-hover' %>
-              <% end %>
-            </li>
+            <% if current_admin %>
+              <%= link_to "Practices", admins_practices_path, class: 'nav-link u-header__nav-link' %>
+              <%= link_to "Logout", destroy_admin_session_path, class: 'nav-link u-header__nav-link', method: :delete %>
+            <% else %>
+              <%= link_to "For support call 086 8621090 (9am-6pm) or email support@gpbuddy.ie", "#", class: 'nav-link u-header__nav-link' %>
+              <li class="nav-item u-header__nav-last-item">
+                <% if current_practice %>
+                  <%= link_to "My Practice Form", new_practice_form_path(practice: current_practice.slug), class: 'btn btn-sm btn-primary transition-3d-hover' %>
+                <% else %>
+                  <%= link_to "Add My Practice", new_practice_registration_path, class: 'btn btn-sm btn-primary transition-3d-hover' %>
+                <% end %>
+              </li>
+            <% end %>
           </ul>
         </div>
         <!-- End Navigation -->
