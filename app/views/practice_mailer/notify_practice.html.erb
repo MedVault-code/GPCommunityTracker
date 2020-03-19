@@ -1,0 +1,86 @@
+
+
+<div class="card mb-4 mt-7" style="border-top: 5px solid #377dff;">
+  <div class="card-body">
+    <h4 class="text-center">COVID-19 GP Screening Form Submission</h4>
+    <h5 class="text-muted text-center mt-2"><%= @practice_form.created_at.strftime("Submitted on %d/%m/%Y at %I:%M%p") %></h5>
+
+    <hr/>
+
+    <h5 class="text-center"><strong>Submission Details</strong></h5>
+    <table class="table">
+      <tbody>
+        <tr>
+          <td style="border-top: 0;">Name</td>
+          <td style="border-top: 0;" class="text-right"><%= @practice_form.first_name %> <%= @practice_form.last_name %></td>
+        </tr>
+        <tr>
+          <td style="border-top: 0;">Date of Birth</td>
+          <td style="border-top: 0;" class="text-right"><%= @practice_form.dob %></td>
+        </tr>
+        <tr>
+          <td style="border-top: 0;">Address</td>
+          <td style="border-top: 0;" class="text-right"><%= @practice_form.address_1 %>,<br /><%= @practice_form.address_2 %>,<br /><%= @practice_form.city %>,<br /><%= @practice_form.county %>, <%= @practice_form.postcode %></td>
+        </tr>
+        <tr>
+          <td style="border-top: 0;">Email</td>
+          <td style="border-top: 0;" class="text-right"><%= @practice_form.email %></td>
+        </tr>
+        <tr>
+          <td style="border-top: 0;">PPSN</td>
+          <td style="border-top: 0;" class="text-right"><%= @practice_form.ppsn %></td>
+        </tr>
+        <tr>
+          <td style="border-top: 0;">Phone</td>
+          <td style="border-top: 0;" class="text-right"><%= @practice_form.phone %></td>
+        </tr>
+        <tr>
+          <td style="border-top: 0;">Existing Patient</td>
+          <td style="border-top: 0;" class="text-right"><%= @practice_form.existing_patient.to_s.titleize %></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr/>
+
+    <h5 class="text-center"><strong>Symptoms</strong></h5>
+    <table class="table">
+      <tbody>
+        <tr>
+          <td style="border-top: 0;">Symptoms</td>
+          <td style="border-top: 0;" class="text-right"><% JSON.parse(@practice_form.symptoms).to_a.each do |s| %><%= s %><br/><% end %></td>
+        </tr>
+        <tr>
+          <td style="border-top: 0;">Duration</td>
+          <td style="border-top: 0;" class="text-right"><%= @practice_form.symptoms_duration %></td>
+        </tr>
+        <tr>
+          <td style="border-top: 0;">Severity</td>
+          <td style="border-top: 0;" class="text-right"><%= @practice_form.severity %></td>
+        </tr>
+        <tr>
+          <td style="border-top: 0;">Recent Travel</td>
+          <td style="border-top: 0;" class="text-right"><%= @practice_form.recent_travel.to_s.titleize %></td>
+        </tr>
+        <tr>
+          <td style="border-top: 0;">Self Isolating</td>
+          <td style="border-top: 0;" class="text-right"><%= @practice_form.self_isolating.to_s.titleize %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="card w-100 mb-4">
+  <div class="card-body">
+    <p class="mb-2"><b>Symptom Outline</b></p>
+    <p class=""><%= @practice_form.symptoms_outline %></p>
+  </div>
+</div>
+
+<div class="card w-100 mb-4">
+  <div class="card-body">
+    <p class="mb-2"><b>Pre Existing Medicial Conditions</b></p>
+    <p class=""><%= @practice_form.pre_existing_medical_conditions %></p>
+  </div>
+</div>

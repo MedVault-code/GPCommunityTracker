@@ -8,10 +8,18 @@ class PracticeFormsController < ApplicationController
     @practice = Practice.friendly.find(params[:practice])
     @practice_form = @practice.practice_forms.create(practice_form_params)
 
+    symptoms_array = params[:practice_form][:symptoms].to_a
+    symptoms_array.reject! {|x| x == "0"}
+
+    @practice_form.symptoms = symptoms_array.to_json
+    @practice_form.save
+
     if @practice_form.persisted?
+      PracticeMailer.with(practice_form: @practice_form).notify_practice.deliver_now!
+
       redirect_to practice_form_complete_path(practice: @practice.slug), flash: {
-          notice: "Form submitted successfully.",
-        }
+        notice: "Form submitted successfully.",
+      }
     else
       flash[:alert] = @practice_form.errors.full_messages.join(". ")
       render action: :new

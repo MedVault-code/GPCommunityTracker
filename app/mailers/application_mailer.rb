@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'from@example.com'
-  layout 'mailer'
+  default from: 'Screening Form <no-reply@screeningform.com>'
+  layout 'bootstrap-mailer'
 end
