@@ -52,7 +52,7 @@
         <div class="col-sm-6 mb-6">
           <div class="js-form-message">
             <label class="form-label">
-              PPSN
+              PPSN - If medical card patient enter 0
               <span class="text-danger">*</span>
             </label>
 
@@ -144,7 +144,7 @@
               <span class="text-danger">*</span>
             </label>
 
-          <small class="form-text text-muted mb-3">Don't know your Eircode use <a href="https://finder.eircode.ie/#/">Eircode Finder</a> </small>
+          <small class="form-text text-muted mb-3">Don't know your Eircode use <a href="https://finder.eircode.ie/#/" target="_blank">Eircode Finder</a> </small>
 
 
 
@@ -375,7 +375,7 @@
 
             <div class="form-group">
               <small class="form-text text-muted mb-3">Are you an existing patient of this practice or are you a new patient</small>
-              <%= f.select :existing_patient, [['Exisitng Patient', true], ['New Patient', false]], {:prompt => "Please select an option"}, class: "custom-select" %>
+              <%= f.select :existing_patient, [['Existing Patient', true], ['New Patient', false]], {:prompt => "Please select an option"}, class: "custom-select" %>
 
             </div>
           </div>
