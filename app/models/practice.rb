@@ -4,9 +4,14 @@ class Practice < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  extend FriendlyId
+  friendly_id :practice_name, use: :slugged
 
-   extend FriendlyId
-   friendly_id :practice_name, use: :slugged
+  has_many :practice_forms
 
-   has_many :practice_forms
+  after_create :send_welcome_email
+  
+  def send_welcome_email
+    PracticeMailer.with(practice: self).welcome_message.deliver_now!
+  end
 end
