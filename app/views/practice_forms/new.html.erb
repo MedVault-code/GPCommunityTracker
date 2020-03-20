@@ -302,12 +302,12 @@
         <div class="col-sm-6 mb-6">
           <div class="js-form-message">
             <label class="form-label">
-              Recent Travel/Contact with confirmed Coronavirus case?
+              Recent travel to affected area?
               <span class="text-danger">*</span>
             </label>
 
             <div class="form-group">
-              <small class="form-text text-muted mb-3">Have you travelled to an area affected by the Coronavirus or been in close contact with a confirmed case of Coronavirus - this is not required for Covid-19 testing, however is useful information</small>
+              <small class="form-text text-muted mb-3">Have you travelled to an area affected by the Coronavirus - this is not required for Covid-19 testing, however is useful information</small>
               <%= f.select :recent_travel, [['Yes, I have traveled to an affected area', true], ['No, I have no traveled to an affected area', false]], {:prompt => "Please select an option"}, class: "custom-select" %>
 
             </div>
