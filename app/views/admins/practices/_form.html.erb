@@ -1,0 +1,62 @@
+<%= form_for [:admins, @practice] do |f| %>
+<div class="row">
+  <div class="col-12 col-md-12 mb-4">
+
+
+    <div class="form-group row">
+      <%= f.label :first_name, "First Name", class: "col-sm-3 col-form-label" %>
+      <div class="col-sm-9 form-control-plaintext">
+        <%= f.text_field :first_name, class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group row">
+      <%= f.label :last_name, "Last Name", class: "col-sm-3 col-form-label" %>
+      <div class="col-sm-9 form-control-plaintext">
+        <%= f.text_field :last_name, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <%= f.label :practice_name, "Practice Name", class: "col-sm-3 col-form-label" %>
+      <div class="col-sm-9 form-control-plaintext">
+        <%= f.text_field :practice_name, class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group row">
+      <%= f.label :email, "Practice Email", class: "col-sm-3 col-form-label" %>
+      <div class="col-sm-9 form-control-plaintext">
+        <%= f.text_field :email, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <%= f.label :email, "Practice Phone", class: "col-sm-3 col-form-label" %>
+      <div class="col-sm-9 form-control-plaintext">
+        <%= f.text_field :practice_phone, class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group row">
+      <%= f.label :address, "Practice Address", class: "col-sm-3 col-form-label" %>
+      <div class="col-sm-9 form-control-plaintext">
+        <%= f.text_field :address, class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group row">
+      <%= f.label :slug, "Practice URL", class: "col-sm-3 col-form-label" %>
+      <div class="col-sm-9 form-control-plaintext">
+        <%= f.text_field :slug, class: "form-control" %>
+        <small>Please use a paramaterized URL e.g. minicorp-hq not MiniCorp HQ
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 text-right">
+        <%= f.submit "Save", class: "btn btn-primary" %>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<% end %>

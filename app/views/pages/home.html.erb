@@ -26,8 +26,9 @@
       </div>
     </div>
   </div>
-
-  <div class="container space-md-1 space-bottom-md-3">
+</main>
+<section class="bg-light">
+  <div class="container space-2">
   	<!-- Title -->
   	<div class="w-md-80 w-lg-50 text-center mx-md-auto mb-9">
   		<h2 class="text-primary">How It
@@ -107,10 +108,42 @@
 
         </div>
       </div>
-
-
-
   	</div>
   </div>
 
-</main>
+</section>
+<section>
+  <div class="container space-2">
+  	<!-- Title -->
+  	<div class="w-md-80 w-lg-50 text-center mx-md-auto mb-4">
+  		<h2 class="text-primary">Created and
+  			<span class="font-weight-semi-bold">Designed By</span>
+  		</h2>
+  	</div>
+  	<!-- End Title -->
+
+    <div class="row mb-6">
+      <div class="col-12 text-center mb-4" style="font-size:2em;">
+        <%= link_to "Dr Knut Moe", "http://www.churchtownfamilypractice.ie/", target: "_blank", class: "text-secondary" %>
+      </div>
+    </div>
+
+    <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-4">
+  		<h2 class="text-primary">In
+  			<span class="font-weight-semi-bold">Partnership </span> With
+  		</h2>
+  	</div>
+  	<div class="row align-items-center">
+
+      <div class="col-12 col-lg-3 pl-4 pr-4 text-center mb-4 mt-4 mx-auto">
+        <%= link_to image_tag('medvault.jpg', class: 'img-fluid', style: 'max-width:210px;'), "https://www.medvault.ie/", target: "_blank" %>
+      </div>
+      <div class="col-12 col-lg-3 pl-4 pr-4 text-center mb-4 mt-4 mx-auto">
+        <%= link_to image_tag('minicorp.svg', class: 'img-fluid', style: 'max-height:80px;'), "https://www.minicorphq.com", target: "_blank" %>
+      </div>
+      <div class="col-12 col-lg-3 pl-4 pr-4 text-center mb-4 mt-4 mx-auto">
+        <%= link_to image_tag('gpbuddy.jpg', class: 'img-fluid', style: 'max-width:210px;'), "https://gpbuddy.ie", target: "_blank" %>
+      </div>
+  	</div>
+  </div>
+</section>

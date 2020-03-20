@@ -1,0 +1,98 @@
+<div class="bg-light">
+  <div class="container space-2">
+    <!-- Stats -->
+    <div class="card-deck d-block d-lg-flex card-lg-gutters-3 mb-6">
+      <!-- Card -->
+      <div class="card mb-3 mb-lg-0">
+        <div class="card-body p-5">
+          <div class="media align-items-center">
+            <span class="btn btn-lg btn-icon btn-soft-primary rounded-circle mr-4">
+              <span class="far fa-clinic-medical btn-icon__inner"></span>
+            </span>
+            <div class="media-body">
+              <span class="d-block font-size-3"><%= Practice.all.count %></span>
+              <h2 class="h6 text-secondary font-weight-normal mb-0">Practices</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Card -->
+
+      <!-- Card -->
+      <div class="card mb-3 mb-lg-0">
+        <div class="card-body p-5">
+          <div class="media align-items-center">
+            <span class="btn btn-lg btn-icon btn-soft-success rounded-circle mr-4">
+              <span class="far fa-clipboard-list-check btn-icon__inner"></span>
+            </span>
+            <div class="media-body">
+              <span class="d-block font-size-3"><%= PracticeForm.all.count %></span>
+              <h3 class="h6 text-secondary font-weight-normal mb-0">Submissions</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Card -->
+
+    </div>
+    <!-- End Stats -->
+
+    <!-- Title -->
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h3 class="h6 mb-0">Practices</h3>
+      <a class="link-muted" href="#">View All</a>
+    </div>
+    <!-- End Title -->
+
+    <!-- Earning Sources -->
+    <div class="mb-7">
+      <div class="card-deck d-block d-lg-flex card-lg-gutters-3">
+        <!-- Card -->
+        <div class="card card-frame mb-3">
+          <div class="card-body p-4">
+            <table class="table table-light">
+              <thead>
+                <tr>
+                  <th scope="col" style="width: 8%;">#</th>
+                  <th scope="col">Practice</th>
+                  <th scope="col">Phone</th>
+                  <th scope="col">Submissions</th>
+                  <th scope="col">Options</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% Practice.all.order('created_at desc').each do |practice| %>
+                <tr>
+                  <th scope="row">
+                    <span class="btn btn-sm btn-icon btn-soft-secondary rounded-circle mr-2">
+                      <span class="btn-icon__inner font-weight-medium"><%= practice.id %></span>
+                    </span>
+                  </th>
+                  <td class="align-middle">
+                    <div class="media align-items-center">
+                      <span><%= practice.practice_name %></span>
+                    </div>
+                  </td>
+                  <td class="align-middle text-secondary"><%= practice.practice_phone %></td>
+                  <td class="align-middle text-secondary"><%= practice.practice_forms.count %></td>
+                  <td class="align-middle">
+                    <%= link_to "Form", "https://www.screeningform.com/#{practice.slug}", target: "_blank" %>
+                    <%= link_to "Edit", edit_admins_practice_path(practice), class: "ml-2" %>
+                    <%= link_to "Delete", admins_practice_path(practice), class: "ml-2 text-danger", data: {confirm: "Are you sure? This will delete all associated submissions for this practice."}, method: :delete %>
+                  </td>
+                </tr>
+                <% end %>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- End Card -->
+
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
