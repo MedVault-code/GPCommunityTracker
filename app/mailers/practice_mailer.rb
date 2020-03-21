@@ -5,7 +5,6 @@ class PracticeMailer < ApplicationMailer
     make_bootstrap_mail(
       to: @practice_form.practice.email,
       from: 'Screening Form <no-reply@screeningform.com>',
-      bcc: 'brian@minicorphq.com, support@gpbuddy.ie',
       subject: 'Screening Form Submission'
     )
   end
@@ -16,7 +15,6 @@ class PracticeMailer < ApplicationMailer
     make_bootstrap_mail(
       to: @practice.email,
       from: 'Screening Form <no-reply@screeningform.com>',
-      bcc: 'brian@minicorphq.com, support@gpbuddy.ie',
       subject: 'Account Created'
     )
   end
