@@ -365,7 +365,7 @@
         </div>
       </div>
 
-        <div class="row">
+      <div class="row">
         <div class="col-sm-6 mb-6">
           <div class="js-form-message">
             <label class="form-label">
@@ -380,11 +380,40 @@
             </div>
           </div>
         </div>
+        <div class="col-sm-6 mb-6">
+          <div class="js-form-message">
+            <label class="form-label">
+              Healthcare Worker
+              <span class="text-danger">*</span>
+            </label>
 
+            <div class="form-group">
+              <small class="form-text text-muted mb-3">Are you a healthcare worker?</small>
+              <%= f.select :healthcare_worker, [['Yes', true], ['No', false]], {:prompt => "Please select an option"}, class: "custom-select", required: true %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 mb-6">
+          <div class="js-form-message">
+            <label class="form-label">
+              Coronavirus Contact
+              <span class="text-danger">*</span>
+            </label>
 
-      <div class="text-center">
-        <%= f.submit "Submit Form", class: "btn btn-primary btn-wide transition-3d-hover mb-4" %>
-        <p class="small">By submitting this form, I consent to my data being stored, analysed and transferred to this GP practice for screening. I agree to the website <a href="https://www.rapicmedical.com/privacy" target="_blank">privacy policy</a> and I also agree to take responsibility to follow up with up GP practice directly if I have not heard back from them within 48 hours. You'll receive an email with your details shortly.</p>
+            <div class="form-group">
+              <small class="form-text text-muted mb-3">Have you been in contact with a confirmed coronavirus case?</small>
+              <%= f.select :coronavirus_contact, [['Yes', true], ['No', false]], {:prompt => "Please select an option"}, class: "custom-select", required: true %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="text-center">
+          <%= f.submit "Submit Form", class: "btn btn-primary btn-wide transition-3d-hover mb-4" %>
+          <p class="small">By submitting this form, I consent to my data being stored, analysed and transferred to this GP practice for screening. I agree to the website <a href="https://www.rapicmedical.com/privacy" target="_blank">privacy policy</a> and I also agree to take responsibility to follow up with up GP practice directly if I have not heard back from them within 48 hours. You'll receive an email with your details shortly.</p>
+        </div>
       </div>
     <% end %>
     <!-- End Contacts Form -->

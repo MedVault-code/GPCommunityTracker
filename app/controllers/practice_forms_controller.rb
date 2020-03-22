@@ -56,7 +56,9 @@ class PracticeFormsController < ApplicationController
         :pre_existing_medical_conditions,
         :ppsn,
         :phone,
-        :existing_patient
+        :existing_patient,
+        :healthcare_worker,
+        :coronavirus_contact
       )
   end
 end
