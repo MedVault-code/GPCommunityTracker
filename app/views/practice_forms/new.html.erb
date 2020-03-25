@@ -193,16 +193,16 @@
 
 
           <div class="form-check mb-2">
-            <%= f.check_box :symptoms, { multiple: true }, "Fevers/Chills (fever usually above 38 degrees)" %>
+            <%= f.check_box :symptoms, { multiple: true }, "Fever" %>
             <label class="form-check-label" for="defaultCheck1">
-              Fevers/Chills (fever usually above 38 degrees)
+              Fevers
             </label>
           </div>
 
           <div class="form-check mb-2">
-            <%= f.check_box :symptoms, { multiple: true }, "Cough (can be dry or productive/chesty)" %>
+            <%= f.check_box :symptoms, { multiple: true }, "Cough" %>
             <label class="form-check-label" for="defaultCheck1">
-              Cough (can be dry or productive/chesty)
+              Cough
             </label>
           </div>
 
@@ -403,7 +403,7 @@
             </label>
 
             <div class="form-group">
-              <small class="form-text text-muted mb-3">Have you been in contact with a confirmed coronavirus case?</small>
+              <small class="form-text text-muted mb-3">Have you been in close contact with a confirmed coronavirus case?</small>
               <%= f.select :coronavirus_contact, [['Yes', true], ['No', false]], {:prompt => "Please select an option"}, class: "custom-select", required: true %>
             </div>
           </div>
