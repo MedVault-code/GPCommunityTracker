@@ -59,7 +59,12 @@ class PracticeFormsController < ApplicationController
         :phone,
         :existing_patient,
         :healthcare_worker,
-        :coronavirus_contact
+        :coronavirus_contact,
+        :risk_group,
+        :household_risk_group,
+        :prison_service_worker,
+        :pregnant,
+        :care_facility_staff
       )
   end
 end

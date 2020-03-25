@@ -8,11 +8,14 @@
 <p class="mb-2"><b>Symptoms:</b> <%= JSON.parse(@practice_form.symptoms).to_a.to_sentence %></p>
 <p class="mb-2"><b>Duration of symptoms:</b> <%= @practice_form.symptoms_duration %></p>
 <p class="mb-2"><b>Severity of symptoms:</b> <%= @practice_form.severity %></p>
-<p class="mb-2"><b>Recent travel:</b> <%= @practice_form.recent_travel.to_s.titleize %></p>
-<p class="mb-2"><b>Self isolating:</b> <%= @practice_form.self_isolating.to_s.titleize %></p>
+<p class="mb-2"><b>Self isolating:</b> <%= @practice_form.self_isolating ? "Yes" : "No" %></p>
+<p class="mb-2"><b>Existing patient:</b> <%= @practice_form.existing_patient ? "Yes" : "No" %></p>
+<p class="mb-2"><b>Healthcare Worker:</b> <%= @practice_form.healthcare_worker ? "Yes" : "No" %></p>
+<p class="mb-2"><b>Coronavirus Contact:</b> <%= @practice_form.coronavirus_contact ? "Yes" : "No" %></p>
+<p class="mb-2"><b>Are you in an at risk group?:</b> <%= @practice_form.risk_group ? "Yes" : "No" %></p>
+<p class="mb-2"><b>Are you a household contact of an at-risk group?:</b> <%= @practice_form.household_risk_group ? "Yes" : "No" %></p>
+<p class="mb-2"><b>Do you work in the prison service?:</b> <%= @practice_form.prison_service_worker ? "Yes" : "No" %></p>
+<p class="mb-2"><b>Are you currently pregnant?:</b> <%= @practice_form.pregnant ? "Yes" : "No" %></p>
+<p class="mb-2"><b>Are you a staff or resident in a long-term care facility or nursing home?:</b> <%= @practice_form.care_facility_staff ? "Yes" : "No" %></p>
 <p class="mb-2"><b>Outline of symptoms:</b> <%= @practice_form.symptoms_outline %></p>
-<p class="mb-2"><b>Pre-existing medical conditions:</b> <%= @practice_form.pre_existing_medical_conditions %></p>
-<p class="mb-2"><b>Existing patient:</b> <%= @practice_form.existing_patient.to_s.titleize %></p>
-<p class="mb-2"><b>Healthcare Worker:</b> <%= @practice_form.healthcare_worker.to_s.titleize %></p>
-<p class="mb-2"><b>Coronavirus Contact:</b> <%= @practice_form.coronavirus_contact.to_s.titleize %></p>
 <div style="display: none;">&#10175;</div>

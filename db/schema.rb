@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_22_135107) do
+ActiveRecord::Schema.define(version: 2020_03_25_162534) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,6 +65,11 @@ ActiveRecord::Schema.define(version: 2020_03_22_135107) do
     t.boolean "existing_patient"
     t.boolean "healthcare_worker"
     t.boolean "coronavirus_contact"
+    t.boolean "risk_group"
+    t.boolean "household_risk_group"
+    t.boolean "prison_service_worker"
+    t.boolean "pregnant"
+    t.boolean "care_facility_staff"
     t.index ["practice_id"], name: "index_practice_forms_on_practice_id"
   end
 

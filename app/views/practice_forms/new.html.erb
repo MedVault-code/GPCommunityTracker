@@ -74,6 +74,17 @@
         </div>
         <!-- End Input -->
 
+        <div class="col-sm-6 mb-6">
+          <div class="js-form-message">
+            <label class="form-label">
+              Email
+              <span class="text-danger">*</span>
+            </label>
+
+            <%= f.email_field :email, class: "form-control", placeholder: "Your email", required: true, "data-msg": "Please enter your name.", "data-error-class": "u-has-error", "data-success-class": "u-has-success" %>
+          </div>
+        </div>
+
         <!-- Input -->
         <div class="col-sm-6 mb-6">
           <div class="js-form-message">
@@ -87,7 +98,9 @@
         </div>
         <!-- End Input -->
       </div>
-      <div class="row">
+
+      <hr>
+      <div class="row mt-6">
 
         <!-- Input -->
         <div class="col-sm-6 mb-6">
@@ -166,22 +179,10 @@
         </div>
         <!-- End Input -->
       </div>
-      <div class="row">
-        <!-- Input -->
-        <div class="col-sm-12 mb-6">
-          <div class="js-form-message">
-            <label class="form-label">
-              Email
-              <span class="text-danger">*</span>
-            </label>
 
-            <%= f.email_field :email, class: "form-control", placeholder: "Your email", required: true, "data-msg": "Please enter your name.", "data-error-class": "u-has-error", "data-success-class": "u-has-success" %>
-          </div>
-        </div>
-        <!-- End Input -->
 
-      </div>
-      <div class="row">
+      <hr>
+      <div class="row mt-6">
 
         <!-- Input -->
         <div class="col-sm-12 mb-6">
@@ -207,9 +208,9 @@
           </div>
 
           <div class="form-check mb-2">
-            <%= f.check_box :symptoms, { multiple: true }, "Difficulty Breathing/Shortness of Breath" %>
+            <%= f.check_box :symptoms, { multiple: true }, "Shortness of Breath" %>
             <label class="form-check-label" for="defaultCheck1">
-              Difficulty Breathing/Shortness of Breath
+              Shortness of Breath
             </label>
           </div>
 
@@ -235,16 +236,16 @@
           </div>
 
           <div class="form-check mb-2">
-            <%= f.check_box :symptoms, { multiple: true }, "Vomiting" %>
+            <%= f.check_box :symptoms, { multiple: true }, "Aches & Pains" %>
             <label class="form-check-label" for="defaultCheck1">
-              Vomiting
+              Aches & Pains
             </label>
           </div>
 
           <div class="form-check mb-2">
-            <%= f.check_box :symptoms, { multiple: true }, "Aches & Pains" %>
+            <%= f.check_box :symptoms, { multiple: true }, "Vomiting" %>
             <label class="form-check-label" for="defaultCheck1">
-              Aches & Pains
+              Vomiting
             </label>
           </div>
 
@@ -255,10 +256,24 @@
             </label>
           </div>
 
-          <div class="form-check">
-            <%= f.check_box :symptoms, { multiple: true }, "No symptoms (if you have no symptoms, you are unlikely to meet the criteria for testing)" %>
+          <div class="form-check mb-2">
+            <%= f.check_box :symptoms, { multiple: true }, "Sudden loss of sense of smell" %>
             <label class="form-check-label" for="defaultCheck1">
-              No symptoms (if you have no symptoms, you are unlikely to meet the criteria for testing)
+              Sudden loss of sense of smell
+            </label>
+          </div>
+
+          <div class="form-check mb-2">
+            <%= f.check_box :symptoms, { multiple: true }, "Headache" %>
+            <label class="form-check-label" for="defaultCheck1">
+              Headache
+            </label>
+          </div>
+
+          <div class="form-check">
+            <%= f.check_box :symptoms, { multiple: true }, "No symptoms" %>
+            <label class="form-check-label" for="defaultCheck1">
+              No symptoms
             </label>
           </div>
         </div>
@@ -296,23 +311,6 @@
 
       <div class="row">
 
-      </div>
-
-      <div class="row">
-        <div class="col-sm-6 mb-6">
-          <div class="js-form-message">
-            <label class="form-label">
-              Recent travel to affected area?
-              <span class="text-danger">*</span>
-            </label>
-
-            <div class="form-group">
-              <small class="form-text text-muted mb-3">Have you travelled to an area affected by the Coronavirus - this is not required for Covid-19 testing, however is useful information</small>
-              <%= f.select :recent_travel, [['Yes, I have traveled to an affected area', true], ['No, I have no traveled to an affected area', false]], {:prompt => "Please select an option"}, class: "custom-select" %>
-
-            </div>
-          </div>
-        </div>
         <div class="col-sm-6 mb-6">
           <div class="js-form-message">
             <label class="form-label">
@@ -326,44 +324,23 @@
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="row">
-
-      </div>
-
-      <div class="row">
-        <div class="col-sm-12 mb-6">
+        <div class="col-sm-6 mb-6">
           <div class="js-form-message">
             <label class="form-label">
-              Brief outline of your symptoms/concerns
+              Coronavirus Contact
               <span class="text-danger">*</span>
             </label>
 
             <div class="form-group">
-              <small class="form-text text-muted mb-3">Please give a brief outline of your symptoms, when they started and your concern re testing. If you have any other symptoms not covered in the checklist above, please let us know here also. </small>
-              <%= f.text_area :symptoms_outline, class: "form-control", required: true %>
-
+              <small class="form-text text-muted mb-3">Have you been in close contact with a confirmed coronavirus case?</small>
+              <%= f.select :coronavirus_contact, [['Yes', true], ['No', false]], {:prompt => "Please select an option"}, class: "custom-select", required: true %>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-sm-12 mb-6">
-          <div class="js-form-message">
-            <label class="form-label">
-              Pre-existing medical conditions
-            </label>
 
-            <div class="form-group">
-              <small class="form-text text-muted mb-3">Please outline any significant pre-existing medical conditions that may put you in an at-risk category</small>
-
-              <%= f.text_area :pre_existing_medical_conditions, class: "form-control" %>
-            </div>
-          </div>
-        </div>
-      </div>
 
       <div class="row">
         <div class="col-sm-6 mb-6">
@@ -398,13 +375,81 @@
         <div class="col-sm-6 mb-6">
           <div class="js-form-message">
             <label class="form-label">
-              Coronavirus Contact
+              Are you in an at risk group?
               <span class="text-danger">*</span>
             </label>
 
             <div class="form-group">
-              <small class="form-text text-muted mb-3">Have you been in close contact with a confirmed coronavirus case?</small>
-              <%= f.select :coronavirus_contact, [['Yes', true], ['No', false]], {:prompt => "Please select an option"}, class: "custom-select", required: true %>
+              <small class="form-text text-muted mb-3">History of diabetes, immunosuppression, chronic lung disease, chronic heart disease, stroke/TIA, chronic kidney disease, smoker.</small>
+              <%= f.select :risk_group, [['Yes', true], ['No', false]], {:prompt => "Please select an option"}, class: "custom-select", required: true %>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 mb-6">
+          <div class="js-form-message">
+            <label class="form-label">
+              Are you a household contact of an at-risk group?
+              <span class="text-danger">*</span>
+            </label>
+
+            <div class="form-group">
+              <%= f.select :household_risk_group, [['Yes', true], ['No', false]], {:prompt => "Please select an option"}, class: "custom-select", required: true %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 mb-6">
+          <div class="js-form-message">
+            <label class="form-label">
+              Do you work in the prison service?
+              <span class="text-danger">*</span>
+            </label>
+
+            <div class="form-group">
+              <%= f.select :prison_service_worker, [['Yes', true], ['No', false]], {:prompt => "Please select an option"}, class: "custom-select", required: true %>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 mb-6">
+          <div class="js-form-message">
+            <label class="form-label">
+              Are you currently pregnant?
+              <span class="text-danger">*</span>
+            </label>
+
+            <div class="form-group">
+              <%= f.select :pregnant, [['Yes', true], ['No', false]], {:prompt => "Please select an option"}, class: "custom-select", required: true %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 mb-6">
+          <div class="js-form-message">
+            <label class="form-label">
+              Are you a staff or resident in a long-term care facility or nursing home?
+              <span class="text-danger">*</span>
+            </label>
+
+            <div class="form-group">
+              <%= f.select :care_facility_staff, [['Yes', true], ['No', false]], {:prompt => "Please select an option"}, class: "custom-select", required: true %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 mb-6">
+          <div class="js-form-message">
+            <label class="form-label">
+              Brief outline of your symptoms/concerns
+              <span class="text-danger">*</span>
+            </label>
+
+            <div class="form-group">
+              <small class="form-text text-muted mb-3">Please give a brief outline of your symptoms, when they started and your concern re testing. If you have any other symptoms not covered in the checklist above, please let us know here also. </small>
+              <%= f.text_area :symptoms_outline, class: "form-control", required: true %>
+
             </div>
           </div>
         </div>
