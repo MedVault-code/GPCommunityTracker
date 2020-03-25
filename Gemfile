@@ -32,6 +32,7 @@ gem 'devise'
 gem 'friendly_id', '~> 5.2.4'
 gem "chartkick", "~> 3.3.1"
 gem "groupdate", "~> 4.3.0"
+gem 'honeybadger', '~> 4.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
