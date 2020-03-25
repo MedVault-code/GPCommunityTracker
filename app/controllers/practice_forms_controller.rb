@@ -16,6 +16,7 @@ class PracticeFormsController < ApplicationController
 
     if @practice_form.persisted?
       PracticeMailer.with(practice_form: @practice_form).notify_practice.deliver_now!
+      PracticeMailer.with(practice_form: @practice_form).notify_patient.deliver_now!
 
       redirect_to practice_form_complete_path(practice: @practice.slug), flash: {
         notice: "Form submitted successfully.",

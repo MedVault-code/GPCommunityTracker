@@ -9,6 +9,16 @@ class PracticeMailer < ApplicationMailer
     )
   end
 
+  def notify_patient
+    @practice_form = params[:practice_form]
+
+    make_bootstrap_mail(
+      to: @practice_form.email,
+      from: 'Screening Form <no-reply@screeningform.com>',
+      subject: 'COVID-19 Screening Form Submission'
+    )
+  end
+
   def welcome_message
     @practice = params[:practice]
 
