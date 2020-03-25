@@ -14,6 +14,7 @@ class PracticeMailer < ApplicationMailer
 
     make_bootstrap_mail(
       to: @practice.email,
+      bcc: 'support@gpbuddy.ie',
       from: 'Screening Form <no-reply@screeningform.com>',
       subject: 'Account Created'
     )
