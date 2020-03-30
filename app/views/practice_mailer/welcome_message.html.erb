@@ -3,7 +3,7 @@
 <p class="mb-2">Your practice has been successfully signed up to screeningform.com to enable you to quickly and
     efficiently screen potential covid-19 patients. All completed forms will be sent to this email address.</p>
 <p class="mb-7">The web link for your unique screening form is
-    <%= link_to "#{Figaro.env.DOMAIN_ROOT}/#{@practice.slug}", "#{Figaro.env.DOMAIN_ROOT}/#{@practice.slug}" %> and this
+    <%= link_to "#{ApplicationHelper.domain_root}/#{@practice.slug}", "#{ApplicationHelper.domain_root}/#{@practice.slug}" %> and this
     can be shared with your patients immediately.</p>
 <p class="mb-2">If you are not happy with this link address please contact support@gpbuddy.ie and they will be able to
     change it for you.</p>
