@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Practice < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -6,6 +8,8 @@ class Practice < ApplicationRecord
 
   extend FriendlyId
   friendly_id :practice_name, use: :slugged
+
+  validates :practice_name, uniqueness: { case_sensitive: false }
 
   has_many :practice_forms
 
