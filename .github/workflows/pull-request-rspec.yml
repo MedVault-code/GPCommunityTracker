@@ -53,6 +53,7 @@ jobs:
           REDIS_URL: redis://localhost:6379/0
           RAILS_ENV: test
           DOMAIN_ROOT: ${{ secrets.DOMAIN_ROOT }}
+          no_reply_email: ${{ secrets.no_reply_email }}
         run: |
           bundle exec rails db:prepare
           bundle exec rspec
