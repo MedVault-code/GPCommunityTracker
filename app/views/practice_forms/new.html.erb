@@ -365,7 +365,7 @@
             </label>
 
             <div class="form-group">
-              <small class="form-text text-muted mb-3">Are you a healthcare worker?</small>
+              <small class="form-text text-muted mb-3">Are you a healthcare worker with patient-facing contact?</small>
               <%= f.select :healthcare_worker, [['Yes', true], ['No', false]], {:prompt => "Please select an option"}, class: "custom-select", required: true %>
             </div>
           </div>
@@ -380,7 +380,7 @@
             </label>
 
             <div class="form-group">
-              <small class="form-text text-muted mb-3">History of diabetes, immunosuppression, chronic lung disease, chronic heart disease, stroke/TIA, chronic kidney disease, smoker.</small>
+              <small class="form-text text-muted mb-3">History of ischaemic heart disease, high blood pressure, history of Stroke/TIA, Type II diabetes, obesity, active malignancy in last 5 years, chronic lung disease, chronic renal disease, chronic liver disease.</small>
               <%= f.select :risk_group, [['Yes', true], ['No', false]], {:prompt => "Please select an option"}, class: "custom-select", required: true %>
             </div>
           </div>
