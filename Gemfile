@@ -39,6 +39,7 @@ gem 'webpacker', '~> 4.2.0'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+
 end
 
 group :development do
@@ -49,6 +50,10 @@ group :development do
   gem 'letter_opener', '~> 1.7.0'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  # custom gems
+  gem 'rspec', '~> 3.9.0'
+  gem 'rspec-rails', '~> 4.0.0.beta2'
+  gem 'rspec-retry', '~> 0.6.2'
 end
 
 group :test do
