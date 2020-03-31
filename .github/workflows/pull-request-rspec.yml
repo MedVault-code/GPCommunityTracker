@@ -1,0 +1,59 @@
+name: "Rspec"
+on: [pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      db:
+        image: postgres:11
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: test
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+      redis:
+        image: redis
+        ports: ["6379:6379"]
+        options: --entrypoint redis-server
+    steps:
+      - uses: actions/checkout@v1
+      - name: Setup Ruby
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: 2.6
+      - uses: actions/cache@v1.1.0
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gem-${{ hashFiles('Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gem-
+      - uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: install
+      - name: Install Bundler
+        run: |
+          gem install bundler
+      - name: Install libpq-dev
+        run: |
+          sudo apt-get install libpq-dev
+      - name: Install Dependencies
+        run: |
+          bundle config path vendor/bundle
+          bundle install --jobs 4 --retry 3
+      - name: Prepare DB and run tests
+        env:
+          DATABASE_URL: postgres://postgres:@localhost:5432/test
+          PGUSER: postgres
+          PGPASSWORD: postgres
+          REDIS_URL: redis://localhost:6379/0
+          RAILS_ENV: test
+          DOMAIN_ROOT: ${{ secrets.DOMAIN_ROOT }}
+          no_reply_email: ${{ secrets.no_reply_email }}
+        run: |
+          bundle exec rails db:prepare
+          bundle exec rspec
