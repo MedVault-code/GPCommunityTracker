@@ -38,3 +38,20 @@ a:hover {
 .testimonial-logo {
   max-height:75px;
 }
+
+.carousel-image {
+  display: inline-block;
+  max-width: 300px;
+  margin-right: 10px;
+  top: 50%;
+  transform: translateY(-50%)
+}
+
+.badge-custom {
+  background-color: rgba(108,138,236,0.1);
+  color: #6C8AEC;
+}
+
+.spark-logo {
+  max-height: 120px;
+}
