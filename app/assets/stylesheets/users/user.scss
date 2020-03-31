@@ -34,3 +34,16 @@ a:hover {
   color: $alert-primary-color;
   background-color: $alert-primary-background;
 }
+
+.carousel-image {
+  display: inline-block;
+  max-width: 300px;
+  margin-right: 10px;
+  top: 50%;
+  transform: translateY(-50%)
+}
+
+.badge-custom {
+  background-color: rgba(108,138,236,0.1);
+  color: #6C8AEC;
+}
