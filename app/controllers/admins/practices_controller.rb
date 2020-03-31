@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Admins
   class PracticesController < AdminController
     def index
@@ -12,7 +14,7 @@ module Admins
       @practice = Practice.friendly.find(params[:id])
 
       if @practice.update(practice_params)
-        redirect_to admins_practices_path, notice: "Practice successfully updated"
+        redirect_to admins_practices_path, notice: 'Practice successfully updated'
       else
         flash[:alert] = @practice.errors.full_messages.to_sentence
         render action: :edit
@@ -22,11 +24,11 @@ module Admins
     def destroy
       @practice = Practice.friendly.find(params[:id])
 
-      if @practice.destroy
-        @message = 'Practice successfully deleted'
-      else
-        @message = @practice.errors.full_messages.to_sentence
-      end
+      @message = if @practice.destroy
+                   'Practice successfully deleted'
+                 else
+                   @practice.errors.full_messages.to_sentence
+                 end
 
       redirect_to admins_practices_path(@building), notice: @message
     end
@@ -35,15 +37,16 @@ module Admins
 
     def practice_params
       params.require(:practice)
-        .permit(
-          :first_name,
-          :last_name,
-          :practice_name,
-          :email,
-          :practice_phone,
-          :address,
-          :slug,
-        )
+            .permit(
+              :first_name,
+              :last_name,
+              :practice_name,
+              :practice_full_name,
+              :email,
+              :practice_phone,
+              :address,
+              :slug
+            )
     end
   end
 end
