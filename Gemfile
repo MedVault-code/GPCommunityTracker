@@ -36,10 +36,12 @@ gem 'groupdate', '~> 4.3.0'
 gem 'honeybadger', '~> 4.0'
 gem 'jquery-rails', '~> 4.3.5'
 gem 'webpacker', '~> 4.2.0'
+gem "faker", "~> 2.10.1"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'rspec-rails', '~> 4.0'
 end
 
 group :development do
@@ -52,7 +54,6 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   # custom gems
   gem 'rspec', '~> 3.9.0'
-  gem 'rspec-rails', '~> 4.0.0.beta2'
   gem 'rspec-retry', '~> 0.6.2'
 end
 
@@ -60,6 +61,10 @@ group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
+  # Easy installation and use of chromedriver to run system tests with Chrome
+  gem 'chromedriver-helper'
+  gem "database_cleaner", "~> 1.7.0"
+  gem "shoulda-matchers", "~> 4.2.0"
   gem 'webdrivers', '~> 4.2.0'
 end
 
