@@ -119,6 +119,31 @@
 </section>
 <section>
   <div class="container space-2">
+    <div class="row justify-content-center">
+      <div class="col-12 text-center">
+        <span class="badge badge-info mb-3 badge-custom">
+          OUR CUSTOMERS
+        </span>
+        <h2>Join the over 300 practices across Ireland already using screening form today</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="carousel" style='width:100%;'>
+        <%= image_tag '', class: "carousel-image", data: { 'flickity-lazyload': image_url("logos/Capel Street Medical Centre Logo.png") } %>
+        <%= image_tag '', class: "carousel-image", data: { 'flickity-lazyload': image_url("logos/Churchtown Family Practice logo.png") } %>
+        <%= image_tag '', class: "carousel-image", data: { 'flickity-lazyload': image_url("logos/Deerpark logo.JPG") } %>
+        <%= image_tag '', class: "carousel-image", data: { 'flickity-lazyload': image_url("logos/GP-Tallaght-Cross.png") } %>
+        <%= image_tag '', class: "carousel-image", data: { 'flickity-lazyload': image_url("logos/Portmarnach GP Logo.JPG") } %>
+        <%= image_tag '', class: "carousel-image", data: { 'flickity-lazyload': image_url("logos/Railway Avenue Practice.png") } %>
+        <%= image_tag '', class: "carousel-image", data: { 'flickity-lazyload': image_url("logos/Shankhill Family Practice logo.png") } %>
+        <%= image_tag '', class: "carousel-image", data: { 'flickity-lazyload': image_url("logos/The Palms Logo.JPG") } %>
+        <%= image_tag '', class: "carousel-image", data: { 'flickity-lazyload': image_url("logos/Westport Medical Center Logo.png") } %>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="container space-2">
   	<!-- Title -->
   	<div class="w-md-80 w-lg-50 text-center mx-md-auto mb-4">
   		<h3 class="text-primary">Created and
@@ -166,3 +191,7 @@
 
   </div>
 </section>
+
+<script>
+  HomePage.init();
+</script>

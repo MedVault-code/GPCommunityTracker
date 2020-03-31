@@ -70,6 +70,5 @@ RSpec.configure do |config|
     end
   end
 end
-
 Capybara.asset_host = "http://localhost:5000"
 Capybara.javascript_driver = :selenium_chrome_headless
