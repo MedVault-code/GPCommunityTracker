@@ -36,7 +36,7 @@ a:hover {
 }
 
 .testimonial-logo {
-  max-height:75px;
+  max-height: 75px;
 }
 
 .carousel-image {
@@ -44,14 +44,39 @@ a:hover {
   max-width: 300px;
   margin-right: 10px;
   top: 50%;
-  transform: translateY(-50%)
+  transform: translateY(-50%);
 }
 
 .badge-custom {
-  background-color: rgba(108,138,236,0.1);
-  color: #6C8AEC;
+  background-color: rgba(108, 138, 236, 0.1);
+  color: #6c8aec;
 }
 
 .spark-logo {
   max-height: 120px;
+}
+
+.text-justify-xs {
+  text-align: justify;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .text-justify-sm {
+      text-align: justify;
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .text-justify-md {
+      text-align: justify;
+  }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .text-justify-lg {
+      text-align: justify;
+  }
 }
