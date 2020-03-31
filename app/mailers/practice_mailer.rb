@@ -4,7 +4,7 @@ class PracticeMailer < ApplicationMailer
 
     make_bootstrap_mail(
       to: @practice_form.practice.email,
-      from: 'Screening Form <no-reply@screeningform.com>',
+      from: "Screening Form <#{Figaro.env.no_reply_email}>",
       subject: 'Screening Form Submission'
     )
   end
@@ -14,7 +14,7 @@ class PracticeMailer < ApplicationMailer
 
     make_bootstrap_mail(
       to: @practice_form.email,
-      from: 'Screening Form <no-reply@screeningform.com>',
+      from: "Screening Form <#{Figaro.env.no_reply_email}>",
       subject: 'COVID-19 Screening Form Submission'
     )
   end
@@ -25,7 +25,7 @@ class PracticeMailer < ApplicationMailer
     make_bootstrap_mail(
       to: @practice.email,
       bcc: 'support@gpbuddy.ie',
-      from: 'Screening Form <no-reply@screeningform.com>',
+      from: "Screening Form <#{Figaro.env.no_reply_email}>",
       subject: 'Account Created'
     )
   end
