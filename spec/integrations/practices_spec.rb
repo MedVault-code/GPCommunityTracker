@@ -8,6 +8,7 @@ describe "practices page", type: :feature do
     within("#new_practice") do
       fill_in "practice[first_name]", with: Faker::Name.first_name
       fill_in "practice[last_name]", with: Faker::Name.last_name
+      fill_in "practice[practice_full_name]", with: Faker::Name.name
       fill_in "practice[email]", with: Faker::Internet.email
       fill_in "practice[practice_phone]", with: Faker::PhoneNumber.cell_phone_with_country_code
       fill_in "practice[password]", with: Faker::Internet.password(min_length: 8)
@@ -19,7 +20,7 @@ describe "practices page", type: :feature do
       click_button "Create Account"
     end.not_to change { Practice.count }
 
-    find("#agree_term_condition_label").click
+    check "Agree to terms and conditions.", allow_label_click: true
 
     expect do
       click_button "Create Account"
