@@ -64,7 +64,18 @@ class PracticeFormsController < ApplicationController
         :household_risk_group,
         :prison_service_worker,
         :pregnant,
-        :care_facility_staff
+        :care_facility_staff,
+        :fever,
+        :cough,
+        :shortness_of_breath,
+        :sore_throat,
+        :runny_nose,
+        :diarrhoea,
+        :aches_pains,
+        :vomiting,
+        :fatigue,
+        :sudden_loss_of_sense_of_smell,
+        :headache
       )
   end
 end
