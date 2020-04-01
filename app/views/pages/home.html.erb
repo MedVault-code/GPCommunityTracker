@@ -3,9 +3,14 @@
     <div class="row justify-content-md-between align-items-center">
       <div class="col-md-6 col-lg-5 mb-7 mb-md-0">
         <h1 class="display-4 font-size-md-down-5 mb-3">COVID-19 GP Screening Form</h1>
-        <p>
+        <p class="h5">
           Free online GP screening forms to facilitate patient screening for <span class="text-primary">COVID-19</span>
         </p>
+        <ul class="pl-3 text-secondary p-3 pl-4">
+          <li>Two minutes to setup - No website needed</li>
+          <li>Easy to use - No technical expertise required</li>
+          <li>Reduce phone consult time by 50%</li>
+        </ul>
 
         <div class="d-flex align-items-center flex-wrap">
           <%= link_to "Add My Practice", new_practice_registration_path, class: "btn btn-soft-primary btn-wide transition-3d-hover" %>
@@ -27,6 +32,25 @@
     </div>
   </div>
 </main>
+<section>
+  <div class="container space-1">
+    <div class="row justify-content-between">
+      <blockquote class="col-12 blockquote">
+        <div class="w-md-80 text-center mx-md-auto">
+          <h5 class="text-primary">Testimonial</h5>
+          <p class="lead text-justify-lg text-gray-700 mb-3">
+            "We are a small practice in Cork city with no practice website.  We quickly realised that for screeningform.com we don’t need one - all we had to do was spend two minutes completing the registration form and we were all set up.
+            It has saved us a huge amount of time and I’m sure it’ll be the same for all practices. Well done. "
+          </p>
+          <p class="font-size-sm text-center mb-0">
+            <span class="font-weight-normal text-dark">Dr Paul Ryan.</span><br>
+            <small>Mayfield Family Practice.</small>
+          </p>
+        </div>
+      </blockquote>
+    </div>
+  </div>
+</div>
 <section class="bg-light">
   <div class="container space-2">
   	<!-- Title -->
@@ -114,6 +138,31 @@
 </section>
 <section>
   <div class="container space-2">
+    <div class="row justify-content-center">
+      <div class="col-12 text-center">
+        <span class="badge badge-info mb-3 badge-custom">
+          OUR USERS
+        </span>
+        <h2>Join the over 300 practices across Ireland already using screening form today</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="carousel" style='width:100%;'>
+        <%= image_tag '', class: "carousel-image", data: { 'flickity-lazyload': image_url("logos/Capel Street Medical Centre Logo.png") } %>
+        <%= image_tag '', class: "carousel-image", data: { 'flickity-lazyload': image_url("logos/Churchtown Family Practice logo.png") } %>
+        <%= image_tag '', class: "carousel-image", data: { 'flickity-lazyload': image_url("logos/Deerpark logo.JPG") } %>
+        <%= image_tag '', class: "carousel-image", data: { 'flickity-lazyload': image_url("logos/GP-Tallaght-Cross.png") } %>
+        <%= image_tag '', class: "carousel-image", data: { 'flickity-lazyload': image_url("logos/Portmarnach GP Logo.JPG") } %>
+        <%= image_tag '', class: "carousel-image", data: { 'flickity-lazyload': image_url("logos/Railway Avenue Practice.png") } %>
+        <%= image_tag '', class: "carousel-image", data: { 'flickity-lazyload': image_url("logos/Shankhill Family Practice logo.png") } %>
+        <%= image_tag '', class: "carousel-image", data: { 'flickity-lazyload': image_url("logos/The Palms Logo.JPG") } %>
+        <%= image_tag '', class: "carousel-image", data: { 'flickity-lazyload': image_url("logos/Westport Medical Center Logo.png") } %>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="container space-2">
   	<!-- Title -->
   	<div class="w-md-80 w-lg-50 text-center mx-md-auto mb-4">
   		<h3 class="text-primary">Created and
@@ -145,11 +194,23 @@
           <div class="col-12 col-lg-3 pl-4 pr-4 text-center mb-4 mt-4 mx-auto">
             <%= link_to image_tag('minicorp.svg', class: 'img-fluid', style: 'max-height:80px;'), "https://www.minicorphq.com", target: "_blank" %>
           </div>
+        </div>
 
-      	</div>
+        <div class="w-100 text-center mx-md-auto mb-4 mt-4">
+          <h3 class="text-primary">
+            <span class="font-weight-semi-bold">Supported </span> by the HSE Spark Innovation Program
+          </h3>
+        </div>
+        <div class="align-items-center text-center">
+          <%= image_tag('logos/Spark Programme Main Logo Horizontal.png', class: 'img-fluid spark-logo') %>
+        </div>
       </div>
     </div>
 
 
   </div>
 </section>
+
+<script>
+  HomePage.init();
+</script>

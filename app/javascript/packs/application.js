@@ -27,5 +27,6 @@ require("chartkick")
 require("chart.js")
 import Chartkick from "chartkick"
 import Chart from "chart.js"
+import 'pages/home_page.js';
 
 console.log('Hello World from Webpacker')

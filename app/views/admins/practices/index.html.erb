@@ -82,7 +82,7 @@
                   <td class="align-middle text-secondary"><%= practice.practice_phone %></td>
                   <td class="align-middle text-secondary"><%= practice.practice_forms.count %></td>
                   <td class="align-middle">
-                    <%= link_to "Form", "https://www.screeningform.com/#{practice.slug}", target: "_blank" %>
+                    <%= link_to "Form", "#{ApplicationHelper.domain_root}/#{practice.slug}", target: "_blank" %>
                     <%= link_to "Edit", edit_admins_practice_path(practice), class: "ml-2" %>
                     <%= link_to "Delete", admins_practice_path(practice), class: "ml-2 text-danger", data: {confirm: "Are you sure? This will delete all associated submissions for this practice."}, method: :delete %>
                   </td>

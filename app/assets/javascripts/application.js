@@ -23,6 +23,7 @@
 //= require vendor/dropzone.js
 //= require vendor/datatables/media/js/jquery.dataTables.js
 //= require vendor/addevent.js
+//= require vendor/flickity.pkgd.min.js
 
 //= require components/hs.core.js
 //= require components/hs.dropzone.js
