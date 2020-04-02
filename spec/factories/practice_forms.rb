@@ -40,5 +40,7 @@ FactoryBot.define do
     sudden_loss_of_sense_of_smell { false }
     headache { true }
     symptoms {}
+    created_at { Time.now }
+    updated_at { Time.now }
   end
 end

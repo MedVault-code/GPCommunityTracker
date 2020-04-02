@@ -1,7 +1,8 @@
 <div class="container">
     <div class="mb-5 mt-5">
-        <h1 class="text-center">You have a new Patient Form <%= l(@practice_form.created_at) %></h1>
+        <h1 class="text-center">You have a new Patient Form</h1>
       </div>
+    <p class="mb-2"><b>Submitted At:</b> <%= l(@practice_form.created_at) %></p>
     <p class="mb-2"><b>Name:</b> <%= @practice_form.first_name %> <%= @practice_form.last_name %></p>
     <p class="mb-2"><b>Date of Birth:</b> <%= l(@practice_form.dob) %></p>
     <p class="mb-2"><b>PPS Number:</b> <%= @practice_form.ppsn %></p>
