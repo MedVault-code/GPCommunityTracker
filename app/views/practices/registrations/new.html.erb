@@ -136,6 +136,21 @@
     </div>
     <!-- End Input -->
 
+    <div class="row">
+      <!-- Select -->
+      <div class="col-sm-6 mb-6">
+        <div class="js-form-message">
+          <label class="form-label" for="practice[county]">
+            County
+            <span class="text-danger">*</span>
+          </label>
+
+          <%= f.select :county, IRELAND_COUNTIES, {prompt: 'Select One'}, { class: 'form-control', required: true } %>
+        </div>
+      </div>
+      <!-- End Select -->
+    </div>
+
     <div class="text-center">
       <%= f.submit "Create Account", class: "btn btn-primary btn-wide transition-3d-hover mb-4", id: "btn-create-account" %>
       <p class="small">Your custom practice screening form will be automatically generated as soon as you create your

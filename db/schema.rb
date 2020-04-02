@@ -99,6 +99,7 @@ ActiveRecord::Schema.define(version: 2020_04_01_083459) do
     t.datetime "updated_at", null: false
     t.string "slug"
     t.string "practice_full_name", default: "", null: false
+    t.string "county"
     t.index ["email"], name: "index_practices_on_email", unique: true
     t.index ["reset_password_token"], name: "index_practices_on_reset_password_token", unique: true
     t.index ["slug"], name: "index_practices_on_slug", unique: true
