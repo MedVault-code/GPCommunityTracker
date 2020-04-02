@@ -1,14 +1,19 @@
-<p class="mb-7">Hello,</p>
+<div class="container">
+    <p class="mb-7">Hello,</p>
 
-<p class="mb-2">Your practice has been successfully signed up to screeningform.com to enable you to quickly and
-    efficiently screen potential covid-19 patients. All completed forms will be sent to this email address.</p>
-<p class="mb-7">The web link for your unique screening form is
-    <%= link_to "#{ApplicationHelper.domain_root}/#{@practice.slug}", "#{ApplicationHelper.domain_root}/#{@practice.slug}" %> and this
-    can be shared with your patients immediately.</p>
-<p class="mb-2">If you are not happy with this link address please contact support@gpbuddy.ie and they will be able to
-    change it for you.</p>
-<p class="mb-2">Please make sure to always check your email spam and junk folders as due to high volume of emails this
-    can occur.</p>
+    <p class="mb-2">Your practice has been successfully signed up to screeningform.com to enable you to quickly and
+        efficiently screen potential covid-19 patients. All completed forms will be sent to this email address.</p>
+    <p class="mb-7">The web link for your unique screening form is
+        <%= link_to "#{ApplicationHelper.domain_root}/#{@practice.slug}", "#{ApplicationHelper.domain_root}/#{@practice.slug}" %>
+        and this
+        can be shared with your patients immediately.</p>
+    <p class="mb-2">If you are not happy with this link address please contact <%= mail_to("support@gpbuddy.ie") %> and they will be able
+        to
+        change it for you.</p>
+    <p class="mb-2">Please make sure to always check your email spam and junk folders as due to high volume of emails
+        this
+        can occur.</p>
 
-<p>Kind regards, <br />The Screening Form Team</p>
-<div style="display: none;">&#10175;</div>
+    <p>Kind regards, <br />The Screening Form Team</p>
+    <div style="display: none;">&#10175;</div>
+</div>

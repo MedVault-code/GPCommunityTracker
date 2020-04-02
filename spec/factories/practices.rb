@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :practice do
     first_name { Faker::Name.first_name }
@@ -8,6 +10,6 @@ FactoryBot.define do
     practice_full_name { Faker::Name.name }
     practice_phone { Faker::PhoneNumber.cell_phone_with_country_code }
     address { Faker::Address.full_address }
-    county { Faker::Address.city }
+    county { 'Dublin 8' }
   end
 end
