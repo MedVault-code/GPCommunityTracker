@@ -55,6 +55,20 @@
       <!-- Input -->
       <div class="col-sm-6 mb-6">
         <div class="js-form-message">
+          <label class="form-label" for="practice_email_confirmation">
+            <br>
+            Practice Email Confirmation
+            <span class="text-danger">*</span>
+          </label>
+
+          <%= email_field_tag :practice_email_confirmation, '', class: "form-control", placeholder: "john@examplepractice.ie", required: true, "data-msg": "Please enter a valid email address." %>
+        </div>
+      </div>
+      <!-- End Input -->
+
+      <!-- Input -->
+      <div class="col-sm-6 mb-6">
+        <div class="js-form-message">
           <label class="form-label">
             <br />Password
             <span class="text-danger">*</span>
@@ -95,8 +109,6 @@
       </div>
       <!-- End Input -->
 
-
-
       <!-- Input -->
       <div class="col-sm-6 mb-6">
         <div class="js-form-message">
@@ -125,7 +137,7 @@
     <!-- End Input -->
 
     <div class="text-center">
-      <%= f.submit "Create Account", class: "btn btn-primary btn-wide transition-3d-hover mb-4" %>
+      <%= f.submit "Create Account", class: "btn btn-primary btn-wide transition-3d-hover mb-4", id: "btn-create-account" %>
       <p class="small">Your custom practice screening form will be automatically generated as soon as you create your
         account. Simply click the blue "My Practice Form" button in the top right hand corner to access it. By clicking
         the create account button you are agreeing to these <a href="https://www.rapicmedical.com/terms"
@@ -135,3 +147,7 @@
     <!-- End Contacts Form -->
   </div>
 </div>
+
+<script>
+  Practice.validate();
+</script>

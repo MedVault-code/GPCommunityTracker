@@ -29,5 +29,4 @@ import Chartkick from "chartkick"
 import Chart from "chart.js"
 import 'pages/home_page.js';
 import 'pages/practice_form.js';
-
-console.log('Hello World from Webpacker')
+import 'pages/practice.js';
