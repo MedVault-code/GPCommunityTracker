@@ -1,4 +1,8 @@
+# frozen_string_literal: true
+
 class PracticeMailer < ApplicationMailer
+  add_template_helper(SymptomHelper)
+
   def notify_practice
     @practice_form = params[:practice_form]
 

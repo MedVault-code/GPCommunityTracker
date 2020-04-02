@@ -1,21 +1,43 @@
-
-<p class="mb-2"><b>Name:</b> <%= @practice_form.first_name %> <%= @practice_form.last_name %></p>
-<p class="mb-2"><b>Date of Birth:</b> <%= @practice_form.dob %></p>
-<p class="mb-2"><b>PPS Number:</b> <%= @practice_form.ppsn %></p>
-<p class="mb-2"><b>Address:</b> <%= @practice_form.address_1 %>, <%= @practice_form.address_2 %>, <%= @practice_form.city %>, <%= @practice_form.county %>, <%= @practice_form.postcode %></p>
-<p class="mb-2"><b>Mobile phone:</b> <%= @practice_form.phone %></p>
-<p class="mb-2"><b>Email:</b> <%= @practice_form.email %></p>
-<p class="mb-2"><b>Symptoms:</b> <%= JSON.parse(@practice_form.symptoms).to_a.to_sentence %></p>
-<p class="mb-2"><b>Duration of symptoms:</b> <%= @practice_form.symptoms_duration %></p>
-<p class="mb-2"><b>Severity of symptoms:</b> <%= @practice_form.severity %></p>
-<p class="mb-2"><b>Self isolating:</b> <%= @practice_form.self_isolating ? "Yes" : "No" %></p>
-<p class="mb-2"><b>Existing patient:</b> <%= @practice_form.existing_patient ? "Yes" : "No" %></p>
-<p class="mb-2"><b>Healthcare Worker:</b> <%= @practice_form.healthcare_worker ? "Yes" : "No" %></p>
-<p class="mb-2"><b>Coronavirus Contact:</b> <%= @practice_form.coronavirus_contact ? "Yes" : "No" %></p>
-<p class="mb-2"><b>Are you in an at risk group?:</b> <%= @practice_form.risk_group ? "Yes" : "No" %></p>
-<p class="mb-2"><b>Are you a household contact of an at-risk group?:</b> <%= @practice_form.household_risk_group ? "Yes" : "No" %></p>
-<p class="mb-2"><b>Do you work in the prison service?:</b> <%= @practice_form.prison_service_worker ? "Yes" : "No" %></p>
-<p class="mb-2"><b>Are you currently pregnant?:</b> <%= @practice_form.pregnant ? "Yes" : "No" %></p>
-<p class="mb-2"><b>Are you a staff or resident in a long-term care facility or nursing home?:</b> <%= @practice_form.care_facility_staff ? "Yes" : "No" %></p>
-<p class="mb-2"><b>Outline of symptoms:</b> <%= @practice_form.symptoms_outline %></p>
-<div style="display: none;">&#10175;</div>
+<div class="container">
+    <div class="mb-5 mt-5">
+        <h1 class="text-center">You have a new Patient Form <%= l(@practice_form.created_at) %></h1>
+      </div>
+    <p class="mb-2"><b>Name:</b> <%= @practice_form.first_name %> <%= @practice_form.last_name %></p>
+    <p class="mb-2"><b>Date of Birth:</b> <%= l(@practice_form.dob) %></p>
+    <p class="mb-2"><b>PPS Number:</b> <%= @practice_form.ppsn %></p>
+    <p class="mb-2"><b>Address:</b> <%= @practice_form.address_1 %>, <%= @practice_form.address_2 %>,
+        <%= @practice_form.city %>, <%= @practice_form.county %>, <%= @practice_form.postcode %></p>
+    <p class="mb-2"><b>Mobile phone:</b> <%= link_to @practice_form.phone, "tel:#{@practice_form.phone}" %></p>
+    <p class="mb-2"><b>Email:</b> <%= mail_to(@practice_form.email) %></p>
+    <p class="mb-2"><b>Symptoms:</b></p>
+    <ul style="list-style: none; font-family: 'Courier New', Courier, monospace;">
+        <li><%= symptom_checkbox(@practice_form.fever) %> Fever</li>
+        <li><%= symptom_checkbox(@practice_form.cough) %> Cough</li>
+        <li><%= symptom_checkbox(@practice_form.shortness_of_breath) %> Shortness of Breath</li>
+        <li><%= symptom_checkbox(@practice_form.sore_throat) %> Sore throat</li>
+        <li><%= symptom_checkbox(@practice_form.runny_nose) %> Runny nose</li>
+        <li><%= symptom_checkbox(@practice_form.diarrhoea) %> Diarrhoea</li>
+        <li><%= symptom_checkbox(@practice_form.aches_pains) %> Aches & Pains</li>
+        <li><%= symptom_checkbox(@practice_form.vomiting) %> Vomiting</li>
+        <li><%= symptom_checkbox(@practice_form.fatigue) %> Fatigue</li>
+        <li><%= symptom_checkbox(@practice_form.sudden_loss_of_sense_of_smell) %> Sudden loss of sense of smell</li>
+        <li><%= symptom_checkbox(@practice_form.headache) %> Headache</li>
+    </ul>
+    <p class="mb-2"><b>Duration of symptoms:</b> <%= @practice_form.symptoms_duration %></p>
+    <p class="mb-2"><b>Severity of symptoms:</b> <%= @practice_form.severity %></p>
+    <p class="mb-2"><b>Self isolating:</b> <%= @practice_form.self_isolating ? "Yes" : "No" %></p>
+    <p class="mb-2"><b>Existing patient:</b> <%= @practice_form.existing_patient ? "Yes" : "No" %></p>
+    <p class="mb-2"><b>Healthcare Worker:</b> <%= @practice_form.healthcare_worker ? "Yes" : "No" %></p>
+    <p class="mb-2"><b>Coronavirus Contact:</b> <%= @practice_form.coronavirus_contact ? "Yes" : "No" %></p>
+    <p class="mb-2"><b>Are you in an at risk group?:</b> <%= @practice_form.risk_group ? "Yes" : "No" %></p>
+    <p class="mb-2"><b>Are you a household contact of an at-risk group?:</b>
+        <%= @practice_form.household_risk_group ? "Yes" : "No" %></p>
+    <p class="mb-2"><b>Do you work in the prison service?:</b>
+        <%= @practice_form.prison_service_worker ? "Yes" : "No" %>
+    </p>
+    <p class="mb-2"><b>Are you currently pregnant?:</b> <%= @practice_form.pregnant ? "Yes" : "No" %></p>
+    <p class="mb-2"><b>Are you a staff or resident in a long-term care facility or nursing home?:</b>
+        <%= @practice_form.care_facility_staff ? "Yes" : "No" %></p>
+    <p class="mb-2"><b>Outline of symptoms:</b> <%= @practice_form.symptoms_outline %></p>
+    <div style="display: none;">&#10175;</div>
+</div>
