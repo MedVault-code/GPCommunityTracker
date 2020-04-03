@@ -13,6 +13,8 @@ class Practice < ApplicationRecord
 
   has_many :practice_forms
 
+  validates_presence_of :county
+
   after_create :send_welcome_email
 
   def send_welcome_email

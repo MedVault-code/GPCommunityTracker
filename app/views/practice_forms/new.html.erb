@@ -192,89 +192,64 @@
 
           <small class="form-text text-muted mb-3">Please outline your symptoms below:</small>
 
-
           <div class="form-check mb-2">
-            <%= f.check_box :symptoms, { multiple: true }, "Fever" %>
-            <label class="form-check-label" for="defaultCheck1">
-              Fever
-            </label>
+            <%= f.check_box :fever, class: "symptoms-checkbox" %>
+            <%= f.label :fever, class: "form-check-label" %>
           </div>
 
           <div class="form-check mb-2">
-            <%= f.check_box :symptoms, { multiple: true }, "Cough" %>
-            <label class="form-check-label" for="defaultCheck1">
-              Cough
-            </label>
+            <%= f.check_box :cough, class: "symptoms-checkbox" %>
+            <%= f.label :cough, class: "form-check-label" %>
           </div>
 
           <div class="form-check mb-2">
-            <%= f.check_box :symptoms, { multiple: true }, "Shortness of Breath" %>
-            <label class="form-check-label" for="defaultCheck1">
-              Shortness of Breath
-            </label>
+            <%= f.check_box :shortness_of_breath, class: "symptoms-checkbox" %>
+            <%= f.label :shortness_of_breath, "Shortness of Breath", class: "form-check-label" %>
           </div>
 
           <div class="form-check mb-2">
-            <%= f.check_box :symptoms, { multiple: true }, "Sore throat" %>
-            <label class="form-check-label" for="defaultCheck1">
-              Sore throat
-            </label>
+            <%= f.check_box :sore_throat, class: "symptoms-checkbox" %>
+            <%= f.label :sore_throat, class: "form-check-label" %>
           </div>
 
           <div class="form-check mb-2">
-            <%= f.check_box :symptoms, { multiple: true }, "Runny nose" %>
-            <label class="form-check-label" for="defaultCheck1">
-              Runny nose
-            </label>
+            <%= f.check_box :runny_nose, class: "symptoms-checkbox" %>
+            <%= f.label :runny_nose, class: "form-check-label" %>
           </div>
 
           <div class="form-check mb-2">
-            <%= f.check_box :symptoms, { multiple: true }, "Diarrhoea" %>
-            <label class="form-check-label" for="defaultCheck1">
-              Diarrhoea
-            </label>
+            <%= f.check_box :diarrhoea, class: "symptoms-checkbox" %>
+            <%= f.label :diarrhoea, class: "form-check-label" %>
           </div>
 
           <div class="form-check mb-2">
-            <%= f.check_box :symptoms, { multiple: true }, "Aches & Pains" %>
-            <label class="form-check-label" for="defaultCheck1">
-              Aches & Pains
-            </label>
+            <%= f.check_box :aches_pains, class: "symptoms-checkbox" %>
+            <%= f.label :aches_pains, "Aches & Pains", class: "form-check-label" %>
           </div>
 
           <div class="form-check mb-2">
-            <%= f.check_box :symptoms, { multiple: true }, "Vomiting" %>
-            <label class="form-check-label" for="defaultCheck1">
-              Vomiting
-            </label>
+            <%= f.check_box :vomiting, class: "symptoms-checkbox" %>
+            <%= f.label :vomiting, class: "form-check-label" %>
           </div>
 
           <div class="form-check mb-2">
-            <%= f.check_box :symptoms, { multiple: true }, "Fatigue" %>
-            <label class="form-check-label" for="defaultCheck1">
-              Fatigue
-            </label>
+            <%= f.check_box :fatigue, class: "symptoms-checkbox" %>
+            <%= f.label :fatigue, class: "form-check-label" %>
           </div>
 
           <div class="form-check mb-2">
-            <%= f.check_box :symptoms, { multiple: true }, "Sudden loss of sense of smell" %>
-            <label class="form-check-label" for="defaultCheck1">
-              Sudden loss of sense of smell
-            </label>
+            <%= f.check_box :sudden_loss_of_sense_of_smell, class: "symptoms-checkbox" %>
+            <%= f.label :sudden_loss_of_sense_of_smell, class: "form-check-label" %>
           </div>
 
           <div class="form-check mb-2">
-            <%= f.check_box :symptoms, { multiple: true }, "Headache" %>
-            <label class="form-check-label" for="defaultCheck1">
-              Headache
-            </label>
+            <%= f.check_box :headache, class: "symptoms-checkbox" %>
+            <%= f.label :headache, class: "form-check-label" %>
           </div>
 
           <div class="form-check">
-            <%= f.check_box :symptoms, { multiple: true }, "No symptoms" %>
-            <label class="form-check-label" for="defaultCheck1">
-              No symptoms
-            </label>
+            <%= check_box_tag :no_symptoms %>
+            <%= label_tag :no_symptoms, "No symptoms", class: "form-check-label", id: "no-symptoms-checkbox" %>
           </div>
         </div>
         <!-- End Input -->
@@ -474,3 +449,7 @@
     <!-- End Contacts Form -->
   </div>
 </div>
+
+<script>
+  PracticeForm.init();
+</script>

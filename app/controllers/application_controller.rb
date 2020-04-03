@@ -14,6 +14,7 @@ class ApplicationController < ActionController::Base
                                         practice_phone
                                         address
                                         slug
+                                        county
                                       ])
   end
 end

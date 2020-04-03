@@ -45,7 +45,8 @@ module Admins
               :email,
               :practice_phone,
               :address,
-              :slug
+              :slug,
+              :county
             )
     end
   end

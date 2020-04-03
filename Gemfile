@@ -37,6 +37,7 @@ gem 'honeybadger', '~> 4.0'
 gem 'jquery-rails', '~> 4.3.5'
 gem 'webpacker', '~> 4.2.0'
 gem "faker", "~> 2.10.1"
+gem "factory_bot_rails", "~> 5.1.1"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

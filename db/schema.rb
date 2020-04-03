@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_30_161016) do
+ActiveRecord::Schema.define(version: 2020_04_01_083459) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,6 +70,17 @@ ActiveRecord::Schema.define(version: 2020_03_30_161016) do
     t.boolean "prison_service_worker"
     t.boolean "pregnant"
     t.boolean "care_facility_staff"
+    t.boolean "fever", default: false
+    t.boolean "cough", default: false
+    t.boolean "shortness_of_breath", default: false
+    t.boolean "sore_throat", default: false
+    t.boolean "runny_nose", default: false
+    t.boolean "diarrhoea", default: false
+    t.boolean "aches_pains", default: false
+    t.boolean "vomiting", default: false
+    t.boolean "fatigue", default: false
+    t.boolean "sudden_loss_of_sense_of_smell", default: false
+    t.boolean "headache", default: false
     t.index ["practice_id"], name: "index_practice_forms_on_practice_id"
   end
 
@@ -88,6 +99,7 @@ ActiveRecord::Schema.define(version: 2020_03_30_161016) do
     t.datetime "updated_at", null: false
     t.string "slug"
     t.string "practice_full_name", default: "", null: false
+    t.string "county"
     t.index ["email"], name: "index_practices_on_email", unique: true
     t.index ["reset_password_token"], name: "index_practices_on_reset_password_token", unique: true
     t.index ["slug"], name: "index_practices_on_slug", unique: true
