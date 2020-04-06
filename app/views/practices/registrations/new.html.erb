@@ -151,12 +151,21 @@
       <!-- End Select -->
     </div>
 
+    <div class="js-form-message mb-6">
+      <div class="form-check">
+        <%= check_box_tag 'agree_term_condition', "", false, required: true, class: "form-check-input"%>
+        <label class="form-check-label" for="agree_term_condition" id="agree_term_condition_label">
+          Agree to
+          <%= link_to ' terms and conditions.', TERMS_AND_CONDITIONS_LINK, target: "_blank" %>
+          <span class="text-danger">*</span>
+        </label>
+      </div>
+    </div>
+
     <div class="text-center">
       <%= f.submit "Create Account", class: "btn btn-primary btn-wide transition-3d-hover mb-4", id: "btn-create-account" %>
       <p class="small">Your custom practice screening form will be automatically generated as soon as you create your
-        account. Simply click the blue "My Practice Form" button in the top right hand corner to access it. By clicking
-        the create account button you are agreeing to these <a href="https://www.rapicmedical.com/terms"
-          target="_blank">terms and conditions</a>. </p>
+        account. Simply click the blue "My Practice Form" button in the top right hand corner to access it.</p>
     </div>
     <% end %>
     <!-- End Contacts Form -->

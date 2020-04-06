@@ -429,6 +429,16 @@
           </div>
         </div>
       </div>
+      <div class="js-form-message mb-6">
+        <div class="form-check">
+          <%= check_box_tag 'agree_term_condition', "", false, required: true, class: "form-check-input"%>
+          <label class="form-check-label" for="agree_term_condition" id="agree_term_condition_label">
+            Agree to
+            <%= link_to ' privacy policy.', PRIVACY_LINK, target: "_blank" %>
+            <span class="text-danger">*</span>
+          </label>
+        </div>
+      </div>
       <div class="row">
         <div class="text-center">
           <%= f.submit "Submit Form", class: "btn btn-primary btn-wide transition-3d-hover mb-4" %>
