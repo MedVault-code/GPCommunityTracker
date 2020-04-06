@@ -14,7 +14,7 @@ RSpec.describe PracticeFormsController, type: :request do
           dob: Faker::Date.birthday,
           address_1: Faker::Address.full_address,
           city: Faker::Address.city,
-          county: Faker::Address.country,
+          county: IRELAND_COUNTIES.first,
           postcode: Faker::Address.zip_code,
           fever: "1",
           cough: "1",

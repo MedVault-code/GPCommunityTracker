@@ -140,12 +140,12 @@
         <!-- Input -->
         <div class="col-sm-6 mb-6">
           <div class="js-form-message">
-            <label class="form-label">
+            <label class="form-label" for="practice[county]">
               County
               <span class="text-danger">*</span>
             </label>
 
-            <%= f.text_field :county, class: "form-control", placeholder: "County", required: true, "data-msg": "Please enter your county.", "data-error-class": "u-has-error", "data-success-class": "u-has-success" %>
+            <%= f.select :county, IRELAND_COUNTIES, {prompt: 'Select One'}, { class: 'form-control', required: true } %>
           </div>
         </div>
         <!-- End Input -->
