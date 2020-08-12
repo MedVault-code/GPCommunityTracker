@@ -28,7 +28,7 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap-email', '~> 0.3.1'
-gem 'chartkick', '~> 3.3.1'
+gem 'chartkick', '~> 3.4.0'
 gem 'devise'
 gem 'figaro'
 gem 'friendly_id', '~> 5.2.4'
